@@ -1,0 +1,164 @@
+body{
+    background-color: #1c9fb6;
+}
+
+.image{
+    position: relative;
+    top: 10px;
+    left: 500px;
+    width: 200px;
+    height: 200px;
+}
+
+h1{
+    position: relative;
+    left: 445px;
+    font-family: "Montserrat";
+    font-size: 45px;
+    text-shadow: 1px 1px 1px #001433;
+    color: white;
+}
+
+.info{
+    position: absolute;
+    font-family: "Montserrat";
+
+}
+
+#fName{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 20px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#lName{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 30px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#idNum{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 40px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#patEmail{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 50px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#qualifications{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 70px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#years{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 80px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#docPass{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 90px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+#confirmPass{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 100px;
+    width: 350px;
+    height: 40px;
+    text-align: center;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+.special{
+    position: relative;
+    border: white;
+    left: 420px;
+    top: 60px;
+    width: 350px;
+    height: 40px;
+    font-family: "Montserrat";
+    font-size: medium;
+}
+
+.register{
+    position: relative;
+    top: 120px;
+    left: 500px;
+    width: 200px;
+    height: 40px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #76f572;
+    border: 2px #60f15b;
+    color: white;
+}
+
+.back{
+    position: relative;
+    top: 180px;
+    left: 295px;
+    width: 200px;
+    height: 40px;
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #76f572;
+    border: 2px #60f15b;
+    color: white;
+}
+
+
+
