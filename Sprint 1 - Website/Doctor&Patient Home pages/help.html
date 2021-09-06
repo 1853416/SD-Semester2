@@ -17,10 +17,10 @@
 </div>
 
 <div class = "drop">
-<button class="horizontal" id = "current" onclick = "changePage(3)">Help</button>
+<button class="horizontal" id = "current" ">Help</button>
 	<div class="menu">
-  	<button class="vert">Settings</button>
-	<button class="vert">Contact Us</button>
+  	<button class="vert" onclick = "changePage(5)>Settings</button>
+	<button class="vert" onclick = "changePage(4)>Contact Us</button>
   	</div>
 </div>
 
@@ -97,7 +97,11 @@ function changePage(p1) {
 	}
 	if(p1 == '4')
 	{
-  	  location.href = ""
+  	  location.href = "help.html"
+	}
+	if(p1 == '5')
+	{
+  	  location.href = "settings.html"
 	}
 
 
