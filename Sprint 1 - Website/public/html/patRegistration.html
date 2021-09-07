@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Doctor Registration</title>
+        <title>Patient Registration</title>
          <!-- Cool Google Fonts -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -16,7 +16,7 @@
         <div id="content_container">
             <div id="form_container">
                 <div id="form_header_container">
-                    <h2 id="form_header"> Doctor Registration </h2>
+                    <h2 id="form_header"> Patient Registration </h2>
                 </div>
 
                 <div id="form_content_container">
@@ -27,15 +27,9 @@
                         <input type="text" id="first_name" placeholder="First name">
                         <input type="text" id="last_name" placeholder="Last name">
                         <input type = "text" id = "idNum" placeholder="ID Number">
-                        <input type = "text" id = "field" placeholder="Field">
-                        <input type = "text" id = "qualifications" placeholder="Qualifications:">
-                        <input type="number" id = "years" placeholder="Years of Experience">                                               
-                                              
-
                         <div id="button_container">
                             <button id="btnRegister" >Register</button>
-                            <!-- <button onclick="register()">Register</button> -->
-                            <button onclick="location.href = '../html/LoginDR.html';">Back</button>
+                            <button onclick="location.href = '../html/LoginPat.html';">Back</button>
                         </div>
 
                     </div>
@@ -46,6 +40,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
-    <script src="../js/drRegLog.js"></script>
+    <script src="../js/ptRegLog.js"></script>
 
 </html>
