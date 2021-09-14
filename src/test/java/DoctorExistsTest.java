@@ -1,21 +1,21 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import javax.print.Doc;
-
 import static org.junit.Assert.assertTrue;
 
 public class DoctorExistsTest {
         private DoctorExists subject;
-
+        private Doctor doctor;
         @Before
         public void setup() {
             subject = new DoctorExists();
-            subject.setDoctorsInDatabase("0784282031");
+            doctor = new Doctor("jackxnian@gmail.com","Dentist","Xin","Nian",
+                    "971202","Phd",69,"0824630844","9911290195083");
+            subject.setDoctorsInDatabase(doctor);
         }
 
         @Test
         public void testGetMessage() {
-            assertTrue(subject.isDoctorValid("0784282031"));
+            assertTrue(subject.isDoctorValid(doctor));
         }
 }

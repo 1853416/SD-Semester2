@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class DoctorExists {
-    ArrayList<String> DoctorsInDatabase = new ArrayList<>();
+    ArrayList<Doctor> DoctorsInDatabase = new ArrayList<>();
 
-    public void setDoctorsInDatabase(String doctor) {
+    public void setDoctorsInDatabase(Doctor doctor) {
         DoctorsInDatabase.add(doctor);
     }
 
-    public boolean isDoctorValid(String doc){
+    public boolean isDoctorValid(Doctor doc){
         return DoctorsInDatabase.contains(doc);
     }
 }
