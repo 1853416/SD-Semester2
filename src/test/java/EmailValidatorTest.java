@@ -10,7 +10,7 @@ public class EmailValidatorTest {
 
     @Before
     public void setup() {
-        doctor = new Doctor("jackxnian@gmail.com","Dentist","Xin","Nian",
+        doctor = new Doctor("jackxnian@gmail.ca","Dentist","Xin","Nian",
                 "971202","Phd",69,"0824630844","9911290195083");
         patient = new Patient("test@user.co.za","Test","Er","123131321321321",
                     "0123456788 ","6655554462313");
@@ -19,6 +19,6 @@ public class EmailValidatorTest {
     @Test
     public void testGetMessage() {
         assertTrue(subject.isEmailValid(patient.getEmail()));
-        assertTrue(subject.isEmailValid(doctor.getEmail()));
+        assertFalse(subject.isEmailValid(doctor.getEmail()));
     }
 }
