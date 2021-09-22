@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <link rel="shortcut icon" href="logo.jpg">
+    <title>Not Discovery</title>
+    <link rel = "stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <h1>My Availibility</h1>
+    <div class = "container">
+        
+        <div class = "calenadar">
+            
+            <div class = "month">
+                <i class = "fas fa-angle-left prev"></i>
+
+                <div class = "date">
+                    <h1></h1>
+                    <p></p>
+                </div>
+
+                <i class = "fas fa-angle-right next"></i>
+
+            </div>
+
+            <div class = "weekdays">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+
+            <div class = "days"></div>
+        </div>
+    </div>
+
+    <form>
+        <label for = "doctorsAvailability">Please indicate the days you are available:</label><br>
+
+        <p>Start of Availibility</p>
+        <input type="date" id="datesAvailable" name="datesAvailable" min="2021-01-01" max="2021-12-31"><br>
+        <p>End of Availibility</p>
+        <input type="date" id="datesAvailable" name="datesAvailable" min="2021-01-01" max="2021-12-31"><br><br>
+
+
+        <label for = "doctorsTime">Please indicate hours you are available for:</label><br>
+
+        <p>Start of your Day</p>
+        <input type="time" id="docTime" name="docTime" min="07:00" max="19:00" required><br>
+        <p>End of your Day</p>
+        <input type="time" id="docTime" name="docTime" min="07:00" max="19:00" required><br><br>
+
+
+        <label for = "doctorsTime">Please indicate the time slots you'd like:</label><br>
+
+        <p>i.e. Would you like your day to be divided into hourly invervals or half hour intervals?</p>
+        <input type = "radio" id = "hourly" name = "hourly" value = "1">
+        <label for = "hourly">Hourly Intervals</label><br>
+
+        <input type = "radio" id = "half-hourly" name = "half-hourly" value = "1">
+        <label for = "half-hourly">Half an Hour Intervals</label><br>
+
+    </form>
+
+    <script src = "script.js"></script>
+
+</body>
+</html>
