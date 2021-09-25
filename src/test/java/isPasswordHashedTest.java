@@ -10,7 +10,7 @@ public class isPasswordHashedTest {
     private Patient patient;
 
     @Before
-    public void setup() {
+    public void setup() throws Exception {
         doctor = new Doctor("jackxnian@gmail.com","Dentist","Xin","Nian",
                 "971202","Phd",69,"0824630844","9911290195083");
         patient = new Patient("test@user.co.za","Test123","Er","123131321321321",
