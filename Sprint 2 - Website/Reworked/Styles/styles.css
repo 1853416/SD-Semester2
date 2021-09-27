@@ -1,0 +1,234 @@
+body{
+    background:-webkit-linear-gradient(0deg, #0be9b9, #07ebfb, #00aeff, #3A86FF);
+    text-align: center;
+}
+
+/*Headings*/
+h1{
+    color: #fff;
+    top: 50px;
+    font-size: 50px;
+    font-family: Bowlby One SC;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+h2{
+    color: #fff;
+    top: 50px;
+    font-size: 25px;
+    font-family: Bowlby One SC;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+}
+
+h3{
+    color: rgb(180, 179, 179);
+    top: 60px;
+    font-size: 40px;
+}
+
+.fp{
+    position: relative;
+    top: -20px;
+    left: -120px;
+}
+
+.rh{
+    position: relative;
+    top: 115px;
+}
+
+.back{
+    position: relative;
+    top: 125px;
+}
+
+/*Containers*/
+
+/*Input Fields*/
+.usname{
+    position: relative;
+    top: 15px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    background-color: white;
+    font-size: 15px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.psword{
+    position: relative;
+    top: 35px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.fname{
+    position: relative;
+    top: 0px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.lname{
+    position: relative;
+    top: 15px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.idno{
+    position: relative;
+    top: 25px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.resAdd{
+    position: relative;
+    top: 35px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.email{
+    position: relative;
+    top: 45px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.exCon{
+    position: relative;
+    top: 55px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 13.5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.psword2{
+    position: relative;
+    top: 65px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.cpsword{
+    position: relative;
+    top: 75px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+.cpsword2{
+    position: relative;
+    top: 85px;
+    width:350px; 
+    height:40px;
+    border: 3px solid white;  
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif ;
+}
+
+/*Buttons*/
+.doctorButton{
+    position: relative; 
+    top: 75px;
+    left: 100px;
+    width: 200px;
+    height: 75px;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+    font-family: Bowlby One SC;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 3px solid white;  
+    border-radius: 5px;
+}
+
+.patientButton{
+    position: relative; 
+    top: 200px;
+    left: -100px;
+    width: 200px;
+    height: 75px;
+    background-color: inherit;
+    color: white;
+    font-size: 25px;
+    font-family: Bowlby One SC;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 3px solid white;  
+    border-radius: 5px; 
+}
+
+.loginButton{
+    position: relative;
+    left: 0px;
+    top: 115px;
+    width: 300px;
+    height: 50px;
+    background-color: inherit;
+    color: white;
+    font-size: 20px;
+    font-family: Bowlby One SC;
+    letter-spacing: 1.5px;
+    border: 3px solid white;  
+    border-radius: 100px; 
+}
+
+.backButton{
+    position: relative;
+    left: -75px;
+    top: 225px;
+    width: 125px;
+    height: 50px;
+    background-color: inherit;
+    color: white;
+    font-size: 20px;
+    font-family: Bowlby One SC;
+    letter-spacing: 1.5px;
+    border: 3px solid white;  
+    border-radius: 5px; 
+}
