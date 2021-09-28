@@ -1,0 +1,226 @@
+<!--NOT YET COMPLETED-->
+
+
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+     <!-- Cool Google Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+     <!-- Our stylesheet -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/avail.css" />
+    <script src="../js/appTimes.js"></script>
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Patient Appoinment Booking</title>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    
+
+    <script type="text/javascript">
+    var firebaseConfig = {
+  apiKey: "AIzaSyABC45epEv116XDWIa-Oag1g9jzjyLDBrY",
+  authDomain: "mpt-web-tester.firebaseapp.com",
+  projectId: "mpt-web-tester",
+  storageBucket: "mpt-web-tester.appspot.com",
+  messagingSenderId: "818343226778",
+  appId: "1:818343226778:web:67be5a6916ab3b02c71e23"
+  
+};
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // Initialize variables
+  const auth = firebase.auth();
+  const database = firebase.firestore();
+  const usersCollection = database.collection('Patient'); 
+    function populate(s1,s2){
+        var s1=document.getElementById(s1);
+        var s2=document.getElementById(s2);
+        s2.innerHTML="";
+        
+        if(s1.value=="General Practitioner"){
+            var optionArray=["|","Dr Williams|Dr Williams","Dr West|Dr West"]
+
+        }
+        else if(s1.value == "Obstetrician and Gynaecologist"){
+		var optionArray = ["|","Dr Kubhal|Dr Kubhal","Dr Zeis|Dr Zeis","Dr Smith|Dr Smith"];
+        }else if(s1.value == "Dentist"){
+		var optionArray = ["|","Dr Jacob|Dr Jacob","Dr Sin|Dr Sin"];
+        }
+        else if(s1.value == "General Surgeon"){
+		var optionArray = ["|","Dr Hannes|Dr Hannes","Dr Song|Dr Song","Dr Vim|Dr Vim"];
+        }
+        else if(s1.value == "Dermatologist"){
+		var optionArray = ["|","Dr Toast|Dr Toast","Dr Albert|Dr Albert"];
+        }
+        
+        for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+
+	}
+
+    }
+    function populate2(s1,s2){
+        var s1=document.getElementById(s1);
+        var s2=document.getElementById(s2);
+        s2.innerHTML="";
+        
+        if(s1.value=="Dr Williams"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00","Slot 4|11:00","Slot 5|12:00","Slot 6|13:00"];
+
+        }
+        else if(s1.value == "Dr West"){
+            var optionArray=["Slot 1|9:00","Slot 2|10:00","Slot 3|11:00","Slot 4|12:00","Slot 5|14:00","Slot 6|15:00"];
+        }
+        else if(s1.value == "Dr Kubhal"){
+            var optionArray=["Slot 1|10:00","Slot 2|11:00","Slot 3|12:00","Slot 4|13:00","Slot 5|14:00","Slot 6|15:00"];
+        }
+        else if(s1.value == "Dr Zeis"){
+            var optionArray=["Slot 1|8:00","Slot 2|10:00","Slot 3|12:00","Slot 4|14:00","Slot 5|16:00"];
+        }
+        else if(s1.value == "Dr Smith"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|11:00","Slot 4|15:00","Slot 5|16:00","Slot 6|17:00"];
+        }
+        else if(s1.value == "Dr Hannes"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00"];
+        }
+        else if(s1.value == "Dr Song"){
+            var optionArray=["Slot 1|8:00","Slot 2|10:00","Slot 3|13:00"];
+        }
+        else if(s1.value == "Dr Vim"){
+            var optionArray=["Slot 1|9:00","Slot 2|11:00","Slot 3|13:00","Slot 4|15:00","Slot 5|17:00"];
+                }
+        else if(s1.value == "Dr Toast"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00","Slot 4|11:00","Slot 5|12:00","Slot 6|13:00"];
+                }
+        else if(s1.value == "Dr Albert"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00","Slot 4|11:00","Slot 5|12:00","Slot 6|13:00"];
+                }
+        else if(s1.value == "Dr Jacob"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00","Slot 4|11:00","Slot 5|12:00","Slot 6|13:00"];
+                }
+        else if(s1.value == "Dr Sin"){
+            var optionArray=["Slot 1|8:00","Slot 2|9:00","Slot 3|10:00","Slot 4|11:00","Slot 5|12:00","Slot 6|13:00"];
+                }
+        for(var option in optionArray){
+		var pair = optionArray[option].split("|");
+		var newOption = document.createElement("option");
+		newOption.value = pair[0];
+		newOption.innerHTML = pair[1];
+		s2.options.add(newOption);
+	}
+
+    btnPost.addEventListener('click', e => {
+  
+
+    const ID = usersCollection.doc('0222222222').collection('Booking').add({
+        "Date": datesAvailable.value,
+        "Field": field.value,
+        "DR": drNames.value,
+        "Time": times.value,
+        "times" : Date.now()  
+    
+      })
+      .then(()=>{
+        alert('Info saved!!')
+        window.location.replace("../html/patHomePage.html");
+        console.log('Data has been saved successfully !')})
+      .catch(error => {
+        console.error(error)
+      });
+
+  });
+}
+       
+    </script>
+
+</head>
+
+<body>
+    <div class="headerp">
+        <img class = "logo" src="../Images/logo.jpeg" width="50;">
+        <h1> Not Discovery </h1>
+        
+        <div class = "droph">
+            <button class="horizontal" id="current" onclick = "location.href = 'patHomePage.html';">Home</button>
+        </div>
+
+        <div class = "dropb">
+            <button class="horizontal" id="current" onclick = "location.href = '';">Book An Appoinment</button>
+        </div>
+
+        <div class = "drops">
+            <button class="horizontal"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <button class="vert" onclick = "location.href = 'settings.html';">Settings</button>
+                <button class="vert" onclick = "location.href = 'help.html';">Help</button>
+            </div>
+        </div>
+
+    </div>
+
+    <img class="doc" src="../Images/pat.jpg" width="75">
+
+    <h2 style="color: #0be9b9;">Bob Jones</h2>
+    <h2 style="color: #0be9b9; font-size: 30px;">Book An Appointment</h2>
+    <h2 id="docName" style="color: #0be9b9; font-size: 20px;"></h2>
+
+
+    <br>
+    <p>Pick a Date:</p>
+    <input type="date" id="datesAvailable" name="datesAvailable" min="2021-01-01" max="2021-12-31">
+    <br>
+    <p>Pick a Slot:</p>
+
+    <select class = "email" id = "field"  style="width: 360px; height: 45px;"  onchange="populate(this.id,'drNames')">
+        <option value = "Blank">Select specialist </option>
+        <option value = "General Practitioner">General Practitioner</option>
+        <option value = "Obstetrician and Gynaecologist">Obstetrician & Gynaecologist</option>
+        <option value = "Dentist">Dentist</option>
+        <option value = "General Surgeon">General Surgeon</option>
+        <option vlaue = "Dermatologist">Dermatologist</option>
+    </select><br>
+
+    <br>
+    <p>Pick a Doctor:</p>
+
+    <select class = "email" id = "drNames" name = "times"   style="width: 150px; height: 45px;" onchange="populate2(this.id,'times')">
+     
+
+       
+    </select><br>
+
+    <br>
+    <p>Pick a Slot:</p>
+
+    <select class = "email" id = "times" name = "times"   style="width: 150px; height: 45px;">
+    
+    </select><br>
+
+	<button class="button2" id = "btnPost" >Confirm Booking</button>
+    
+
+    <!--
+    <button class="button2">Book Appoinment</button>
+    <button class="button2" onclick="myFunction()" value="Reset form">Clear</button>
+    -->
+
+   
+
+
+    </body>
+   
+    </html>
