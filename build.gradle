@@ -14,6 +14,7 @@ dependencies {
 //    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
 //    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.23.4'
 }
 
 jacocoTestReport {
@@ -28,3 +29,21 @@ check.dependsOn jacocoTestReport
 //test {
 //    useJUnitPlatform()
 //}
+task codeCoverageReport(type: JacocoReport) {
+    executionData fileTree(project.rootDir.absolutePath).include("**/build/jacoco/*.exec")
+
+    subprojects.each {
+        sourceSets it.sourceSets.main
+    }
+
+    reports {
+        xml.enabled true
+        xml.destination file("${buildDir}/reports/jacoco/report.xml")
+        html.enabled false
+        csv.enabled false
+    }
+}
+
+codeCoverageReport.dependsOn {
+    subprojects*.test
+}
