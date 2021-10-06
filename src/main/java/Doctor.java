@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Doctor {
     String email;
     String Field;
@@ -8,6 +10,8 @@ public class Doctor {
     int YearsExp;
     String phoneNum;
     String ID;
+    ArrayList<String> times = new ArrayList<>();
+    ArrayList<Boolean> isAvailable = new ArrayList<>();
 
     public Doctor(String email, String field, String name, String surname, String password, String qualification, int yearsExp, String phoneNum, String ID) {
         this.email = email;
@@ -56,4 +60,20 @@ public class Doctor {
     public String getID() {
         return ID;
     }
+
+    public void setTimesAvailability(String time, boolean isAvail) {
+        times.add(time);
+        isAvailable.add(isAvail);
+    }
+
+    public boolean isAvail(String time){
+        for(int i = 0; i < times.size(); ++i){
+            if(times.get(i).equals(time)){
+                return isAvailable.get(i);
+            }
+        }
+
+        return false;
+    }
+
 }

@@ -40,6 +40,20 @@ public class isPasswordHashed {
     }
 
 
+    public String decrypt(String encryptedString) {
+        String decryptedText = null;
+        try {
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            byte[] encryptedText = Base64.getDecoder().decode(encryptedString);
+            byte[] plainText = cipher.doFinal(encryptedText);
+            decryptedText = new String(plainText);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return decryptedText;
+    }
+
+
     public boolean isHashed(String hashedPass, String pass){
         if(!hashedPass.equals(pass) && hashedPass.length() != pass.length()){
             return true;
