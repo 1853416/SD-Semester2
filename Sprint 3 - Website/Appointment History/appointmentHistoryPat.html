@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/homepages.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Appointment History Patient</title>
+
+</head>
+
+<body>
+     <!-- ADD HREF FOR PATIENT HOME PAGE -->
+    <button href="">Back</button> 
+    <img class="doc" src="../Images/pat.jpg" width="175">
+
+    <h1>Appointment History</h1>
+
+    <div class="card">
+        <h3 id = "p1">Doctor's Name</h3>
+        <p class="p1" id = "d1">Appointment Date</p>
+        <p class="p2" id = "t1">Appointment Time</p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+
+
+    </div>
+
+    <div class="card">
+        <h3 id = "p2">Doctor's Name</h3>
+        <p class="p1" id = "d2">Appointment Date</p>
+        <p class="p2" id = "t2">Appointment Time</p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <h3 id = "p3">Doctor's Name</h3>
+        <p class="p1" id = "d3">Appointment Date</p>
+        <p class="p2" id = "t3">Appointment Time</p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+    </div>
+  
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="appointPat.js"></script>
+
+</html>
