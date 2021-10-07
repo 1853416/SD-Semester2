@@ -1,0 +1,104 @@
+<!--NOT YET COMPLETED-->
+
+
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+     <!-- Cool Google Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+     <!-- Our stylesheet -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/avail.css" />
+    <!--<script src="../js/appTimes.js"></script>-->
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Patient Appoinment Booking</title>
+
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../js/functions.js"></script>
+
+</head>
+
+<body>
+    <div class="headerp">
+        <img class = "logo" src="../Images/logo.jpeg" width="50;">
+        <h1> Not Discovery </h1>
+        
+        <div class = "droph">
+            <button class="horizontal" id="current" onclick = "location.href = 'patHomePage.html';">Home</button>
+        </div>
+
+        <div class = "dropb">
+            <button class="horizontal" id="current" onclick = "location.href = '';">Book An Appoinment</button>
+        </div>
+
+        <div class = "drops">
+            <button class="horizontal"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <button class="vert" onclick = "location.href = 'settings.html';">Settings</button>
+                <button class="vert" onclick = "location.href = 'help.html';">Help</button>
+            </div>
+        </div>
+
+    </div>
+
+    <img class="doc" src="../Images/pat.jpg" width="75">
+
+    <h2 style="color: #0be9b9;">Bob Jones</h2>
+    <h2 style="color: #0be9b9; font-size: 30px;">Book An Appointment</h2>
+    <h2 id="docName" style="color: #0be9b9; font-size: 20px;"></h2>
+
+
+    <br>
+    <p>Pick a Date:</p>
+    <input type="date" id="datesAvailable" name="datesAvailable" min="2021-01-01" max="2021-12-31">
+    <br>
+    <p id="w">Pick a Slot:</p>
+
+    <select class = "email" id = "field"  style="width: 360px; height: 45px;"  onchange="fldSel(), pullDoc()">
+        <option value = "Blank">Select specialist </option>
+        <option value = "General Practitioner">General Practitioner</option>
+        <option value = "Obstetrician and Gynaecologist">Obstetrician & Gynaecologist</option>
+        <option value = "Dentist">Dentist</option>
+        <option value = "General Surgeon">General Surgeon</option>
+        <option value = "Dermatologist">Dermatologist</option>
+    </select><br>
+
+    <br>
+    <p>Pick a Doctor:</p>
+
+    <select class = "email" id = "drNames" name = "times"   style="width: 150px; height: 45px;" onchange="docSel(), pullTim()">
+
+       
+    </select><br>
+
+    <br>
+    <p>Pick a Slot:</p>
+
+    <select class = "email" id = "times" name = "times"   style="width: 150px; height: 45px;">
+    
+    </select><br>
+
+	<button class="button2" id = "btnPost"  onclick = "book()">Confirm Booking</button>
+    
+
+    <!--
+    <button class="button2">Book Appoinment</button>
+    <button class="button2" onclick="myFunction()" value="Reset form">Clear</button>
+    -->
+
+   
+
+
+    </body>
+   
+    </html>
