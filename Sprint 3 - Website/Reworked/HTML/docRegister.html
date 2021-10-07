@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+     <!-- Cool Google Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+     <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../Styles/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/toast.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Doctor Register</title>
+
+</head>
+
+<body>
+
+    <img src="../Images/logo.jpeg" width="75;">
+    <h2> Welcome to </br> Not Discovery </h2>
+
+    <h3> Register As A Doctor </h3>
+
+    <input class="fname" type="text" id="first_name" name="fname" placeholder="First Name"><br> 
+    <input class="lname" type="text" id="last_name" name="plname" placeholder="Last Name"><br> 
+    <input class="idno" type="text" id="idNum" name="idno" placeholder="ID Number"><br> 
+    <input class="resAdd" type="text" id="email" name="email" placeholder="Email"><br> 
+
+    <select class = "email" id = "field" name = "special" style="width: 360px; height: 45px;">
+        <option value = "Blank">Select your Occupation</option>
+        <option value = "General Practitioner">General Practitioner</option>
+        <option value = "Obstetrician and Gynaecologist">Obstetrician & Gynaecologist</option>
+        <option value = "Dentist">Dentist</option>
+        <option value = "General Surgeon">General Surgeon</option>
+        <option vlaue = "Dermatologist">Dermatologist</option>
+    </select><br>
+
+    <input class="exCon" type="text" id="qualifications" name="qual" placeholder="Please Specify Your Qualifications"><br> 
+    <input class="psword2" type="text" id="years" name="yeo" placeholder="Please Specify Your Years of Experience"><br> 
+    <input class="cpsword" type="password" id="password" name="psword" placeholder="Password"><br> 
+    <!-- <input class="cpsword2" type="password" id="cpsword" name="cpsword" placeholder="Confirm Password"><br>  -->
+    <input class="cpsword2" type="tel" id="phone" name="phone" placeholder="Phone Number" maxlength = "10"><br> 
+
+    
+    <button class = "loginButton" id="btnRegister">Register</button>
+
+    <div class = "rh">
+    <p><a href="../HTML/docLogin.html">Already Have an Account? Login Here</a></p>
+    <p><a href="../HTML/landingPage.html">Back</a></p>
+    </div>
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/drRegLog.js"></script>
+<!-- <div class="toast toast--visible toast--success">Sample Text</div> -->
+
+
+</html>
