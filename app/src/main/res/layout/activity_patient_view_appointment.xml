@@ -100,8 +100,7 @@
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
             app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            android:clickable="false">
+            app:boxCornerRadiusBottomEnd="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -109,10 +108,10 @@
                 android:id="@+id/ET_A_Appointment_View_Description"
 
                 android:gravity="top"
-
                 android:textSize="18sp"
                 android:textColor="@color/pureWhite"
-                android:clickable="false"/>
+                android:inputType="none"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -141,8 +140,7 @@
             app:boxCornerRadiusTopEnd="10dp"
             app:boxCornerRadiusTopStart="10dp"
             app:boxCornerRadiusBottomStart="10dp"
-            app:boxCornerRadiusBottomEnd="10dp"
-            android:clickable="false">
+            app:boxCornerRadiusBottomEnd="10dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -153,7 +151,8 @@
 
                 android:textSize="18sp"
                 android:textColor="@color/pureWhite"
-                android:clickable="false"/>
+                android:inputType="none"
+                android:focusable="false"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
