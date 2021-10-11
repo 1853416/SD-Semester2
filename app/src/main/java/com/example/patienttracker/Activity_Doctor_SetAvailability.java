@@ -812,6 +812,7 @@ public class Activity_Doctor_SetAvailability extends AppCompatActivity {
                 });
     }
 
+
     private void getAvailability(){
 
         collectionReference.document(doctorPhone)
