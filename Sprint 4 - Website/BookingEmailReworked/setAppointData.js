@@ -45,7 +45,7 @@ btnSave.addEventListener('click', e => {
   function sendEmail() {
 	Email.send({
 	Host: "smtp.gmail.com",
-	Username : "notdiscoveryemails@gmail.com",
+	Username : "notdiscoveryemails2@gmail.com",
 	Password : "SDgroup12",
 	To : 'mmanjra005@gmail.com',
 	From : "notdiscoveryemails@gmail.com",
