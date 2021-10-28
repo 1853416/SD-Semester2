@@ -1,6 +1,7 @@
 package com.example.patienttracker;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.firestore.CollectionReference;
@@ -29,8 +31,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapter_Note_Appointment_Doctor.AppointmentViewHolder> {
-    private ArrayList<Note_Appointment> mAppList;
-    private String patientName;
+    private ArrayList<Note_Appointment_Doctor_extra> mAppList;
+    private String patientName, AppDate,patientEmail;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference collectionPatientReference = db.collection("Patient");
     public static class AppointmentViewHolder extends RecyclerView.ViewHolder{
@@ -49,7 +51,7 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
         }
     }
 
-    public Adapter_Note_Appointment_Doctor(ArrayList<Note_Appointment> AppHistList){
+    public Adapter_Note_Appointment_Doctor(ArrayList<Note_Appointment_Doctor_extra> AppHistList){
         mAppList = AppHistList;
     }
 
@@ -63,11 +65,13 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
 
     @Override
     public void onBindViewHolder(@NonNull AppointmentViewHolder holder, int position) {
-        Note_Appointment current = mAppList.get(position);
+        Note_Appointment_Doctor_extra current = mAppList.get(position);
 
         holder.tv_Appointment_Date.setText(current.getAppointmentDateTime());
         holder.tv_Name.setText(current.getName());
         patientName = current.getName();
+        AppDate = current.getAppointmentDateTime();
+        patientEmail = current.getPateintEmail();
         holder.tv_Number.setText(current.getNumber());
         holder.btn_view.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,8 +86,14 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
         holder.btn_missed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // new EmailTask().execute();
-                Toast.makeText(view.getContext(), "Missed Appointment", Toast.LENGTH_SHORT).show();
+                new EmailTask().execute();
+                CardView cView = holder.itemView.findViewById(R.id.card);
+                cView.setCardBackgroundColor(Color.GRAY);
+                holder.btn_missed.setEnabled(false);
+                holder.btn_view.setEnabled(false);
+                holder.btn_missed.setVisibility(View.GONE);
+                holder.btn_view.setVisibility(View.GONE);
+                //Toast.makeText(view.getContext(), "Missed Appointment", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -99,7 +109,7 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
         protected Void doInBackground(Void... voids) {
             final String Username = "notdiscoveryemails2@gmail.com";
             final String Password = "SDgroup12";
-            String MessagetoSend = "Hi, ";
+            String MessagetoSend = "Hi, " + patientName+"\n" +"You missed your appointment with Dr." + "at "+ AppDate ;
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
@@ -118,9 +128,9 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(Username));
                 //Log.d(TAG, "Patient Email in email task"+ patient_document_email);
-                String SendList = "email";
+                String SendList = patientEmail;
                 message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(SendList) );
-                message.setSubject("Not Discovery Booking Confirmation");
+                message.setSubject("Missed Appointment");
                 message.setText(MessagetoSend);
                 Transport.send(message);
             }catch(MessagingException e){
