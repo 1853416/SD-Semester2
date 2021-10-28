@@ -248,11 +248,6 @@ public class Activity_Doctor_Login extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        if (){
-//
-//        }else {
-//            super.onBackPressed();
-//        }
         Intent intent = new Intent(this, Activity_Main.class);
         startActivity(intent);
     }//end of onBackPressed

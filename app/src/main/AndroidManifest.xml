@@ -11,7 +11,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar0">
-
         <activity
             android:name=".Activity_Main"
             android:exported="true">
@@ -41,12 +40,15 @@
             android:theme="@style/AppTheme.NoActionBarDoctor" />
         <activity
             android:name=".Activity_Doctor_Settings"
-            android:theme="@style/AppTheme.NoActionBarDoctor"/>
+            android:theme="@style/AppTheme.NoActionBarDoctor" />
         <activity
             android:name=".Activity_Doctor_SetAppointment"
             android:theme="@style/AppTheme.NoActionBarDoctor" /> <!-- Patient -->
         <activity
             android:name=".Activity_Patient_Login"
+            android:theme="@style/AppTheme.NoActionBar1" />
+        <activity
+            android:name=".Activity_Patient_Forgot"
             android:theme="@style/AppTheme.NoActionBar1" />
         <activity
             android:name=".Activity_Patient_Register"
