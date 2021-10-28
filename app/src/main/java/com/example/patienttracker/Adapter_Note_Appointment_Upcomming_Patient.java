@@ -47,8 +47,6 @@ public class Adapter_Note_Appointment_Upcomming_Patient extends RecyclerView.Ada
         holder.tv_Appointment_Date.setText(current.getAppointmentDateTime());
         holder.tv_Name.setText(current.getName());
         holder.tv_Number.setText(current.getNumber());
-
-
     }
 
     @Override

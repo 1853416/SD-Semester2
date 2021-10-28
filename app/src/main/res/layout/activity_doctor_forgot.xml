@@ -35,7 +35,6 @@
         android:src="@drawable/doctor_icon">
     </ImageView>
 
-
     <TextView
         android:id="@+id/TV_A_DoctorForgot_DoctorTitle"
         android:layout_width="match_parent"
@@ -62,7 +61,7 @@
         android:hint="Email">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/ET_A_DoctorLogin_Email"
+            android:id="@+id/ET_A_DoctorForgot_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
@@ -87,4 +86,15 @@
         android:textColor="@color/pureWhite"
         android:textSize="20sp" />
 
+    <Button
+        android:id="@+id/B_A_DoctorForgot_Back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/B_A_DoctorForgot_Confirm"
+        android:layout_marginHorizontal="100dp"
+
+        android:fontFamily="@font/keania_one_regular"
+        android:text="Back"
+        android:textColor="@color/pureWhite"
+        android:textSize="20sp" />
 </RelativeLayout>

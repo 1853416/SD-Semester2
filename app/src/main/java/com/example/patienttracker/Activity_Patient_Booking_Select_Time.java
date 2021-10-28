@@ -664,7 +664,13 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
                     final String Username = "notdiscoveryemails2@gmail.com";
                     final String Password = "SDgroup12";
-                    String MessagetoSend = "Good Day," +patient_document_firstName+" "+patient_document_lastName+"\n"+"Booking confirmed for "+selectedDate +"\n" +"Doctor name: "+doctor_document_name+"\n";
+                    String MessagetoSend = "Good Day,"
+                            +patient_document_firstName+" "
+                            +patient_document_lastName+"\n"
+                            +"Booking confirmed for "
+                            +selectedDate +"\n"
+                            +"Doctor name: "
+                            +doctor_document_name+"\n";
                     Properties props = new Properties();
                     props.put("mail.smtp.auth","true");
                     props.put("mail.smtp.starttls.enable","true");
