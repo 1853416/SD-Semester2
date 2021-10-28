@@ -110,7 +110,8 @@ public class Activity_Doctor_Login extends AppCompatActivity {
         startActivity(intent);
     }
     private void DoctorForgot() {
-
+        Intent intent = new Intent(this, Activity_Doctor_Forgot.class);
+        startActivity(intent);
     }
     private void ClearAll(){
         enteredPhone = "";

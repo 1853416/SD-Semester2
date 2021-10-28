@@ -96,10 +96,10 @@
         android:layout_below="@id/IL_A_DoctorLogin_Password"
         android:layout_marginHorizontal="100dp"
 
+        android:fontFamily="@font/keania_one_regular"
         android:text="Login"
         android:textColor="@color/pureWhite"
-        android:fontFamily="@font/keania_one_regular"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/B_A_DoctorLogin_Register"
