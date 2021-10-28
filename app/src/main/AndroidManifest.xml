@@ -19,15 +19,17 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <!-- Doctor -->
+        </activity> <!-- Doctor -->
         <activity
             android:name=".Activity_Doctor_Login"
             android:theme="@style/AppTheme.NoActionBar1" />
         <activity
+            android:name=".Activity_Doctor_Forgot"
+            android:theme="@style/AppTheme.NoActionBar1" />
+        <activity
             android:name=".Activity_Doctor_Register"
             android:theme="@style/AppTheme.NoActionBar2" />
+
         <activity
             android:name=".Activity_Doctor"
             android:theme="@style/AppTheme.NoActionBarDoctor" />
@@ -36,9 +38,7 @@
             android:theme="@style/AppTheme.NoActionBarDoctor" />
         <activity
             android:name=".Activity_Doctor_SetAppointment"
-            android:theme="@style/AppTheme.NoActionBarDoctor" />
-
-        <!-- Patient -->
+            android:theme="@style/AppTheme.NoActionBarDoctor" /> <!-- Patient -->
         <activity
             android:name=".Activity_Patient_Login"
             android:theme="@style/AppTheme.NoActionBar1" />
@@ -56,8 +56,7 @@
             android:theme="@style/AppTheme.NoActionBar2" />
         <activity
             android:name=".Activity_Patient_ViewAppointment"
-            android:theme="@style/AppTheme.NoActionBar2"/>
-
+            android:theme="@style/AppTheme.NoActionBar2" />
     </application>
 
 </manifest>
