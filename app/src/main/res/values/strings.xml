@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
-
+    <string name="notice_email_address">notdiscoveryemails2@gmail.com</string>
+    <string name="notice_email_password">SDgroup12</string>
 </resources>

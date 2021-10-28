@@ -1102,13 +1102,12 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/LL_F_DoctorA_WorkTime"
                 android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
 
                 android:backgroundTint="@color/bluePatient"
 
-                android:text="Set Availability"
-                >
-            </Button>
+                android:text="Set Availability"/>
 
         </RelativeLayout>
 
