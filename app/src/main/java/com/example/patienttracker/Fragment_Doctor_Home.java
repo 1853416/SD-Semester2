@@ -1,6 +1,7 @@
 package com.example.patienttracker;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -43,6 +45,8 @@ public class Fragment_Doctor_Home extends Fragment {
     private TextView textViewUserquali ;
     private TextView textViewUseryears ;
     private TextView textViewUserUserID ;
+
+    private ImageView IV_Help, IV_Settings;
 
     public Fragment_Doctor_Home() {
         // Required empty public constructor
@@ -105,6 +109,8 @@ public class Fragment_Doctor_Home extends Fragment {
         textViewUserquali.setText(myuserquali);
         textViewUseryears.setText(myuseryears + " Years");
         textViewUserUserID.setText("Login ID : " + myuserphone);
+        IV_Help = view.findViewById(R.id.IV_Help);
+        IV_Settings = view.findViewById(R.id.IV_Setting);
 
         return view;
     }//end of onCreteView
@@ -113,7 +119,20 @@ public class Fragment_Doctor_Home extends Fragment {
     @Override  //Cycle After onCreteView
     public void onStart() {
         super.onStart();
-
+        IV_Help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Activity_Doctor_Help.class);
+                startActivity(intent);
+            }
+        });
+        IV_Settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Activity_Doctor_Settings.class);
+                startActivity(intent);
+            }
+        });
 
     }//end of onStart
 
