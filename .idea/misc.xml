@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_forgot.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_login.xml" value="0.3101851851851852" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_view_appointment.xml" value="0.31244444444444447" />
         <entry key="..\:/Users/jackx/AndroidStudioProjects/PatientTracker/app/src/main/res/drawable-v24/custom_button1.xml" value="0.33513513513513515" />
@@ -56,9 +55,17 @@
         <entry key="..\:/Users/jackx/AndroidStudioProjects/PatientTracker/app/src/main/res/layout/fragment_search.xml" value="0.32117117117117117" />
         <entry key="..\:/Users/jackx/AndroidStudioProjects/PatientTracker/app/src/main/res/layout/recyclerview_doctor_info.xml" value="0.32117117117117117" />
         <entry key="..\:/Users/jackx/AndroidStudioProjects/PatientTracker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.33513513513513515" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/acitivity_patient_settings.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_acitivity_patient_settings.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_help.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_login.xml" value="0.3482789855072464" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_main.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_set_appointment.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_settings.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_main.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_booking_select_doctor.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_booking_select_time.xml" value="0.3591485507246377" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_help.xml" value="0.3591485507246377" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_booking_successful.xml" value="0.3269927536231884" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_successful_register.xml" value="0.3269927536231884" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_successful_update.xml" value="0.3269927536231884" />
@@ -69,6 +76,7 @@
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/recyclerview_appointment_upcomming_card.xml" value="0.3432971014492754" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/recyclerview_doctor_card.xml" value="0.3432971014492754" />
         <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/recyclerview_pastappointment_card.xml" value="0.3269927536231884" />
+        <entry key="..\:/Users/ryani/StudioProjects/PatientTracker/app/src/main/res/layout/settings_activity.xml" value="0.3591485507246377" />
       </map>
     </option>
   </component>

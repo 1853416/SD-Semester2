@@ -13,9 +13,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -58,6 +60,8 @@ public class Fragment_Patient_Home extends Fragment {
     private Button btn_booking;
     private RelativeLayout rl_upComing;
     private LinearLayout ll_upComingNo;
+
+    private ImageView IV_Help, IV_Settings;
 
     //databse
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -128,6 +132,9 @@ public class Fragment_Patient_Home extends Fragment {
 
         btn_booking = view.findViewById(R.id.B_F_Patient_Book);
 
+        IV_Help = view.findViewById(R.id.IV_Help);
+        IV_Settings = view.findViewById(R.id.IV_Setting);
+
         return view;
     }//end of onCreteView
 
@@ -147,6 +154,22 @@ public class Fragment_Patient_Home extends Fragment {
                 startActivity(intent);
             }
         });
+
+        IV_Help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Activity_Patient_Help.class);
+                startActivity(intent);
+            }
+        });
+        IV_Settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Activity_Patient_Settings.class);
+                startActivity(intent);
+            }
+        });
+
 
     }//end of onStart
 
