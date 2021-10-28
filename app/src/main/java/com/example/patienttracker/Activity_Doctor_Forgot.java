@@ -3,15 +3,20 @@ package com.example.patienttracker;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.firestore.CollectionReference;
@@ -36,8 +41,7 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
     //Variables
     private String doctor_email;
     private String doctorDocumentID;
-
-    private Note_Doctor note_doctor;
+    private String doctorID;
 
     //Widgets
     private TextInputLayout il_email;
@@ -45,6 +49,9 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
 
     private Button btn_confirm;
     private Button btn_back;
+
+    private Dialog dialog_successful;
+    private Button btnLogin;
 
     //Firestore database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -61,6 +68,11 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
 
         btn_confirm = findViewById(R.id.B_A_DoctorForgot_Confirm);
         btn_back = findViewById(R.id.B_A_DoctorForgot_Back);
+
+        dialog_successful = new Dialog(this);
+        dialog_successful.setContentView(R.layout.dialog_successful_update);
+        dialog_successful.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        btnLogin = dialog_successful.findViewById(R.id.B_D_Success_Continue);
     }
 
     @Override
@@ -103,6 +115,7 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
                                     doctorDocumentID = document.getId();
+                                    doctorID = (String) document.getData().get("ID");
                                     resetPassword();
                                 }
                             }else {
@@ -118,7 +131,26 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
 
     private void resetPassword(){
         new EmailTask().execute();
+        doctorCollectionReference
+                .document(doctorDocumentID)
+                .update("Password",doctorID)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void unused) {
+                        openSuccessfulDialog();
+                    }
+                });
     }
+    private void openSuccessfulDialog() {
+        dialog_successful.show();
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backToLogin();
+            }
+        });
+    }
+
     private void backToLogin(){
         onBackPressed();
     }
@@ -134,7 +166,7 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             final String email_address = getResources().getString(R.string.notice_email_address);
             final String email_password = getResources().getString(R.string.notice_email_password);
-            String MessagetoSend = "Your Password has been rested to Your ID" ;
+            String MessageToSend = "Your Password has been rested to Your ID Number ： " + doctorID;
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
@@ -155,8 +187,8 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
                 //Log.d(TAG, "Patient Email in email task"+ patient_document_email);
                 String SendList = doctor_email;
                 message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(SendList) );
-                message.setSubject("Missed Appointment");
-                message.setText(MessagetoSend);
+                message.setSubject("Password Reset");
+                message.setText(MessageToSend);
                 Transport.send(message);
             }catch(MessagingException e){
                 throw new RuntimeException(e);
