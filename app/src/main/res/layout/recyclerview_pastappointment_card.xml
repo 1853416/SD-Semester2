@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginHorizontal="10dp"
+    android:layout_marginTop="10dp"
+    app:cardCornerRadius="10dp"
+    tools:ignore="HardcodedText"
+    app:cardBackgroundColor="@color/bluePatient">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:id="@+id/TV_C_Appointment_AppDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="appointment date/time"
+            android:textColor="@color/pureWhite"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TV_C_Appointment_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TV_C_Appointment_AppDate"
+            android:text="Name"
+            android:textColor="@color/pureWhite"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/TV_C_Appointment_Number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TV_C_Appointment_Name"
+            android:text="Number"
+            android:textColor="@color/pureWhite"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/B_C_Appointment_View"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TV_C_Appointment_Number"
+            android:layout_marginTop="5dp"
+            android:text="View Appointment Form"
+            android:textSize="10sp"></Button>
+
+        <Button
+            android:id="@+id/B_C_Missed_Appointment"
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/B_C_Appointment_View"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="-49dp"
+            android:layout_marginEnd="-3dp"
+            android:layout_toEndOf="@+id/B_C_Appointment_View"
+            android:backgroundTint="#CD3737"
+            android:text="Missed Appointment"
+            android:textSize="10sp"></Button>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
