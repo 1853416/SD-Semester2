@@ -99,9 +99,7 @@
         android:text="Login"
         android:textColor="@color/pureWhite"
         android:fontFamily="@font/keania_one_regular"
-        android:textSize="20sp"
-        >
-    </Button>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/B_A_DoctorLogin_Register"
@@ -113,21 +111,18 @@
         android:text="Register"
         android:textColor="@color/pureWhite"
         android:fontFamily="@font/keania_one_regular"
-        android:textSize="20sp"
-        >
-    </Button>
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/B_A_DoctorLogin_Forget"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_alignParentBottom="true"
 
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-
         android:text="Forgot Username or Password"
-        android:textColor="@color/pureWhite">
-    </Button>
+        android:textColor="@color/pureWhite"/>
 
 <!--    <TextView-->
 <!--        android:id="@+id/testtext"-->
