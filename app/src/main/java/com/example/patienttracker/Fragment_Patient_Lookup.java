@@ -89,7 +89,7 @@ public class Fragment_Patient_Lookup extends Fragment {
         return view;
     }
 
-    private void loadAppointments(){
+    public void loadAppointments(){
         ArrayList<Note_Appointment> appointmentHistories = new ArrayList<>();
         collectionBookingReference
                 .whereEqualTo("patient_documentID", patient_phone)

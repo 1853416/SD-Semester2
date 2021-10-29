@@ -13,8 +13,13 @@
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_login.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_settings.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_view_appointment.xml" value="0.31244444444444447" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment_upcomming.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment_upcomming_doctor.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment_upcomming_patient.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_booking_successful.xml" value="0.1698198198198198" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_delete_appointment.xml" value="0.33" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_successful_register.xml" value="0.1698198198198198" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/dialog_successful_update.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/fragment_doctor.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/fragment_doctor_availability.xml" value="0.31666666666666665" />

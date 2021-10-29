@@ -61,7 +61,7 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
     private Query query;
 
     //adapter
-    private Adapter_Doctor adapter__doctor_;
+    private Adapter_Doctor adapter_doctor;
 
 
 
@@ -155,10 +155,10 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
                 .setQuery(query, Note_Doctor.class)
                 .build();
 
-        adapter__doctor_ = new Adapter_Doctor(options);
+        adapter_doctor = new Adapter_Doctor(options);
 
         rv_doctors.setLayoutManager(new LinearLayoutManager(this));
-        rv_doctors.setAdapter(adapter__doctor_);
+        rv_doctors.setAdapter(adapter_doctor);
     }
 
     private final TextWatcher fieldsTextWatcher = new TextWatcher() {
@@ -213,8 +213,8 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
     };
 
     private void adapterStart(){
-        adapter__doctor_.startListening();
-        adapter__doctor_
+        adapter_doctor.startListening();
+        adapter_doctor
                 .setOnItemClickListener(new Adapter_Doctor.OnItemClickListener() {
                     @Override
                     public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
