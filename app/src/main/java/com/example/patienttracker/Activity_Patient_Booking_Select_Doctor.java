@@ -61,7 +61,7 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
     private Query query;
 
     //adapter
-    private Adapter_Note_Doctor adapter_note_doctor_;
+    private Adapter_Doctor adapter__doctor_;
 
 
 
@@ -155,10 +155,10 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
                 .setQuery(query, Note_Doctor.class)
                 .build();
 
-        adapter_note_doctor_ = new Adapter_Note_Doctor(options);
+        adapter__doctor_ = new Adapter_Doctor(options);
 
         rv_doctors.setLayoutManager(new LinearLayoutManager(this));
-        rv_doctors.setAdapter(adapter_note_doctor_);
+        rv_doctors.setAdapter(adapter__doctor_);
     }
 
     private final TextWatcher fieldsTextWatcher = new TextWatcher() {
@@ -213,9 +213,9 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
     };
 
     private void adapterStart(){
-        adapter_note_doctor_.startListening();
-        adapter_note_doctor_
-                .setOnItemClickListener(new Adapter_Note_Doctor.OnItemClickListener() {
+        adapter__doctor_.startListening();
+        adapter__doctor_
+                .setOnItemClickListener(new Adapter_Doctor.OnItemClickListener() {
                     @Override
                     public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
                         String DocName = documentSnapshot.toObject(Note_Doctor.class).getFirstName()+" "+documentSnapshot.toObject(Note_Doctor.class).getLastName();

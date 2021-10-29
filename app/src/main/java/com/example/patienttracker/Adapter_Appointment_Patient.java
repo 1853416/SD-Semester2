@@ -6,14 +6,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Adapter_Note_Appointment_Patient extends RecyclerView.Adapter<Adapter_Note_Appointment_Patient.AppointmentViewHolder> {
+public class Adapter_Appointment_Patient extends RecyclerView.Adapter<Adapter_Appointment_Patient.AppointmentViewHolder> {
     private  ArrayList<Note_Appointment> mAppList;
 
     public static class AppointmentViewHolder extends RecyclerView.ViewHolder{
@@ -30,14 +29,14 @@ public class Adapter_Note_Appointment_Patient extends RecyclerView.Adapter<Adapt
         }
     }
 
-    public Adapter_Note_Appointment_Patient(ArrayList<Note_Appointment> AppHistList){
+    public Adapter_Appointment_Patient(ArrayList<Note_Appointment> AppHistList){
         mAppList = AppHistList;
     }
 
     @NonNull
     @Override
     public AppointmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_appointment_card,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_appointment,parent,false);
 //        AppointmentViewHolder avh = new AppointmentViewHolder(v);
         return new AppointmentViewHolder(v);
     }

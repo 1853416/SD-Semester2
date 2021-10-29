@@ -3,13 +3,11 @@ package com.example.patienttracker;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -30,7 +28,7 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapter_Note_Appointment_Doctor.AppointmentViewHolder> {
+public class Adapter_Appointment_Doctor extends RecyclerView.Adapter<Adapter_Appointment_Doctor.AppointmentViewHolder> {
     private ArrayList<Note_Appointment_Doctor_extra> mAppList;
     private String patientName, AppDate,patientEmail;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -51,14 +49,14 @@ public class Adapter_Note_Appointment_Doctor extends RecyclerView.Adapter<Adapte
         }
     }
 
-    public Adapter_Note_Appointment_Doctor(ArrayList<Note_Appointment_Doctor_extra> AppHistList){
+    public Adapter_Appointment_Doctor(ArrayList<Note_Appointment_Doctor_extra> AppHistList){
         mAppList = AppHistList;
     }
 
     @NonNull
     @Override
     public AppointmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.recyclerview_pastappointment_card,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_pastappointment,parent,false);
 //        AppointmentViewHolder avh = new AppointmentViewHolder(v);
         return new AppointmentViewHolder(v);
     }

@@ -128,7 +128,7 @@ public class Fragment_Doctor_History extends Fragment {
                                                     String pateintEmail = (String) documentSnapshot.get("Email");
                                                     String name_patient = temp_name1+ " " +temp_name2;
                                                     appointmentHistories.add(new Note_Appointment_Doctor_extra(date + " " + time, documentID, name_patient, PatientID,pateintEmail));
-                                                    mAdapter = new Adapter_Note_Appointment_Doctor(appointmentHistories);
+                                                    mAdapter = new Adapter_Appointment_Doctor(appointmentHistories);
                                                     mRecyclerView.setLayoutManager(mlayoutManager);
                                                     mRecyclerView.setAdapter(mAdapter);
                                                 }

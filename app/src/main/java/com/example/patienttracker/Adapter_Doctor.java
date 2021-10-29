@@ -13,10 +13,10 @@ import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.DocumentSnapshot;
 
-public class Adapter_Note_Doctor extends FirestoreRecyclerAdapter<Note_Doctor, Adapter_Note_Doctor.Holder_Note_Doctor_Info> {
+public class Adapter_Doctor extends FirestoreRecyclerAdapter<Note_Doctor, Adapter_Doctor.Holder_Note_Doctor_Info> {
     private OnItemClickListener onItemClickListener;
 
-    public Adapter_Note_Doctor(@NonNull FirestoreRecyclerOptions<Note_Doctor> options) {
+    public Adapter_Doctor(@NonNull FirestoreRecyclerOptions<Note_Doctor> options) {
         super(options);
     }
 
@@ -33,7 +33,7 @@ public class Adapter_Note_Doctor extends FirestoreRecyclerAdapter<Note_Doctor, A
     @Override
     public Holder_Note_Doctor_Info onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.recyclerview_doctor_card,parent,false);
+                .inflate(R.layout.card_doctor,parent,false);
         return new Holder_Note_Doctor_Info(view);
     }
 
