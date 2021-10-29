@@ -18,7 +18,7 @@ var doctorData= {};
 
 async function pullBook(){	
 
-	localStorage.setItem('docName', "0000000000");
+	//localStorage.setItem('docName', "0000000000");
 	var name = localStorage.getItem('docName');
 	
 	const db = await database.collection('TestingBookings').where("doctorID", "==", name);
