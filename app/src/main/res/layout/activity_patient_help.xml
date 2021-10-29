@@ -10,68 +10,57 @@
     android:background="@color/bluePatient2">
 
     <TextView
-        android:id="@+id/TV_A_PatientBooking_Title"
+        android:id="@+id/TV_A_Help_Title"
         android:layout_width="match_parent"
-
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
 
-        android:fontFamily="@font/consolab"
-
+        android:fontFamily="@font/keania_one_regular"
         android:text="Help"
         android:textAlignment="center"
         android:textColor="@color/pureWhite"
-
         android:textSize="60sp" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:id="@+id/TV_A_Help_AboutUs_Title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_A_PatientBooking_Title"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="115dp"
+        android:layout_below="@+id/TV_A_Help_Title"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
         android:fontFamily="@font/consolab"
         android:text="About Us"
-        android:textColor="@color/greenDoctor2"
+        android:textColor="@color/pureWhite"
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/TV_A_Help_AboutUs"
         android:layout_width="397dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="-7dp"
-        android:fontFamily="@font/consolab"
+        android:layout_below="@+id/TV_A_Help_AboutUs_Title"
+        android:layout_marginHorizontal="30dp"
         android:text="Not Discovery, is the future of viewing and managing patient data. Not only is our goal is to improve doctor patient relationships but we also aim to provide you with a stress free expierence when it comes to making a doctors appointment for any and all your personal medical needs. All our doctors are professionals in their field and strive to provide you with the highest quality care. We thank you for choosing Not Discovery and we'd like to ensure that your health is our number one priorty."
         android:textColor="@color/pureWhite"
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:id="@+id/TV_A_Help_Contact_Title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_A_PatientBooking_Title"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="244dp"
-        android:layout_marginEnd="94dp"
+        android:layout_below="@+id/TV_A_Help_AboutUs"
+        android:textAlignment="center"
         android:fontFamily="@font/consolab"
         android:text="Contact US"
-        android:textColor="@color/greenDoctor2"
+        android:textColor="@color/pureWhite"
         android:textSize="40sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/TV_A_Help_Contact"
         android:layout_width="397dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="233dp"
-        android:fontFamily="@font/consolab"
+        android:layout_below="@+id/TV_A_Help_Contact_Title"
+        android:layout_marginHorizontal="30dp"
+
         android:text="Email Address: NotDiscovery@gmail.com \nFor all your user enquiries contact: NotDiscoveryHelp@gmail.com\nTech Support Services: 073 654 9015"
         android:textColor="@color/pureWhite"
         android:textSize="15sp" />
