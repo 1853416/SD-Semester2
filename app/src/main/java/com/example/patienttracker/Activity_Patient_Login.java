@@ -108,6 +108,8 @@ public class Activity_Patient_Login extends AppCompatActivity {
     }
 
     private void PatientForgot() {
+        Intent intent = new Intent(this, Activity_Patient_Forgot.class);
+        startActivity(intent);
     }
 
     private void ClearAll(){
@@ -247,11 +249,6 @@ public class Activity_Patient_Login extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-//        if (){
-//
-//        }else {
-//            super.onBackPressed();
-//        }
         Intent intent = new Intent(this, Activity_Main.class);
         startActivity(intent);
     }//end of onBackPressed

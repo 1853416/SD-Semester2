@@ -35,13 +35,13 @@ import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-public class Activity_Doctor_Forgot extends AppCompatActivity {
-    private final String TAG = "Doctor Forgot Password";
+public class Activity_Patient_Forgot extends AppCompatActivity {
+    private final String TAG = "Patient Forgot Password";
 
     //Variables
-    private String doctor_email;
-    private String doctorDocumentID;
-    private String doctorID;
+    private String patient_email;
+    private String patientDocumentID;
+    private String patientID;
 
     //Widgets
     private TextInputLayout il_email;
@@ -55,19 +55,18 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
 
     //Firestore database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference doctorCollectionReference = db.collection("Doctor");
+    private CollectionReference patientCollectionReference = db.collection("Patient");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_forgot);
-
-        il_email = findViewById(R.id.IL_A_DoctorForgot_Email);
-        et_email = findViewById(R.id.ET_A_DoctorForgot_Email);
+        setContentView(R.layout.activity_patient_forgot);
+        il_email = findViewById(R.id.IL_A_PatientForgot_Email);
+        et_email = findViewById(R.id.ET_A_PatientForgot_Email);
         et_email.addTextChangedListener(emailTextWatcher);
 
-        btn_confirm = findViewById(R.id.B_A_DoctorForgot_Confirm);
-        btn_back = findViewById(R.id.B_A_DoctorForgot_Back);
+        btn_confirm = findViewById(R.id.B_A_PatientForgot_Confirm);
+        btn_back = findViewById(R.id.B_A_PatientForgot_Back);
 
         dialog_successful = new Dialog(this);
         dialog_successful.setContentView(R.layout.dialog_successful_update);
@@ -80,12 +79,13 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
         super.onStart();
 
         btn_confirm.setOnClickListener(v -> {
-            getDoctorDocumentID();
+            getPatientDocumentID();
         });
 
         btn_back.setOnClickListener(v -> {
             backToLogin();
         });
+        
     }
 
     //TextWatchers
@@ -94,7 +94,7 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) { }
         @Override
         public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-            doctor_email = et_email.getText().toString().trim();
+            patient_email = et_email.getText().toString().trim();
         }
         @Override
         public void afterTextChanged(Editable editable) {
@@ -103,9 +103,9 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
         }
     };
 
-    private void  getDoctorDocumentID(){
-        doctorCollectionReference
-                .whereEqualTo("Email", doctor_email)
+    private void  getPatientDocumentID(){
+        patientCollectionReference
+                .whereEqualTo("Email", patient_email)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -114,8 +114,8 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
                             if(!task.getResult().isEmpty()){
                                 for (QueryDocumentSnapshot document : task.getResult()) {
                                     Log.d(TAG, document.getId() + " => " + document.getData());
-                                    doctorDocumentID = document.getId();
-                                    doctorID = (String) document.getData().get("ID");
+                                    patientDocumentID = document.getId();
+                                    patientID = (String) document.getData().get("ID");
                                     resetPassword();
                                 }
                             }else {
@@ -131,9 +131,9 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
 
     private void resetPassword(){
         new EmailTask().execute();
-        doctorCollectionReference
-                .document(doctorDocumentID)
-                .update("Password",doctorID)
+        patientCollectionReference
+                .document(patientDocumentID)
+                .update("Password",patientID)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -166,7 +166,7 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
         protected Void doInBackground(Void... voids) {
             final String email_address = getResources().getString(R.string.notice_email_address);
             final String email_password = getResources().getString(R.string.notice_email_password);
-            String MessageToSend = "Your Doctor Account Password has been rested \n Your new Password is your ID Number ： " + doctorID;
+            String MessageToSend = "Your Patient Account Password has been rested \n Your new Password is your ID Number ： " + patientID;
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
@@ -185,9 +185,9 @@ public class Activity_Doctor_Forgot extends AppCompatActivity {
                 Message message = new MimeMessage(session);
                 message.setFrom(new InternetAddress(email_address));
                 //Log.d(TAG, "Patient Email in email task"+ patient_document_email);
-                String SendList = doctor_email;
+                String SendList = patient_email;
                 message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(SendList) );
-                message.setSubject("NotDiscovery: Password Reset");
+                message.setSubject("NotDiscovery:Password Reset");
                 message.setText(MessageToSend);
                 Transport.send(message);
             }catch(MessagingException e){

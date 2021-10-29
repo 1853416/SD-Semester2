@@ -17,4 +17,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
 
+    <string name="notice_email_address">notdiscoveryemails2@gmail.com</string>
+    <string name="notice_email_password">SDgroup12</string>
 </resources>
