@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+     <!-- Cool Google Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+     <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href = "" /> <!-- HREF NEEDS TO BE UPDATED -->
+    <link rel="stylesheet" type="text/css" href = "../Styles/settings.css" />
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Personal Information Doctor</title>
+
+</head>
+
+<body>
+    <img src="../Images/logo.jpeg" width="75">
+
+    <h1>My Personal Information</h1><br>
+
+    <form>
+        
+        <label class = "font" for="First Name" >First Name:</label>
+        <p class = "font2" type="text" id="fname" name="fname"></p><br> 
+    
+        <label class = "font" for="Last Name" >Last Name: </label>
+        <p  class = "font2" type="text" id="lname" name="lname"></p><br>
+        
+        <label class = "font" for="ID" >ID Number: </label>
+        <p class = "font2" type="text" name="id" id = "id" ></p><br>
+    
+        <label class = "font" for="Email" >Email Address:</label>
+        <p class = "font2" type="text" name="email" id = "email"></p><br>
+
+        <label class = "font" for="Fields" >Occupation: </label>
+        <p class = "font2" type="text" name="occu" id = "occu"></p><br>
+       
+        <label class = "font" for="Qualifications" >Qualifications: </label>
+        <p class = "font2" type="text" name="quali" id = "quali"></p><br>
+        
+        <label class = "font" for="Years of Experience" >Years of Experience:</label>
+        <p class = "font2" type="text" name="yoe" id = "yoe"></p><br>
+       
+    </form>
+
+    <br>
+    <br>
+
+    <button class = "button" onclick = "location.href = 'updatePersonalInfoDoc.html';">Update Information</button><br>
+    <button class = "button" onclick = "location.href = 'updatedSettingsD.html';">Back</button>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="../js/personalInfoDoc.js"></script>
+    
+</body>
+
+</html>

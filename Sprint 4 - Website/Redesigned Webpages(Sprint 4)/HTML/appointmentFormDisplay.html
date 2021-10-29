@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/appointmentForm.css" />
+
+</head>
+
+<body>
+    <img src="../Images/logo.jpeg" width="75;" style="text-align: centre;">
+    <h1>Appointment Form</h1>
+
+    <form>
+        <label class ="font2" for="pname">Patient's Name:</label>
+        <p  class="font3" type="text" id="pname" name="pname" style="width:400px; height:30px;"></p><br> 
+    
+        <label class="font2" for="dateOfVisit">Date of Visit:</label>
+        <p  class="font3" type="date" id="dateOfVisit" name="dateOfVisit" style="width:400px;"></p><br>
+
+        <div class = "napp">
+        <label style="font-size: 20px;" for="appNotes" style="position: relative; left: 10px;">Notes from the Appoinment:</label><br>
+        <!-- <input type="text" id="appNotes" name="appNotes"><br> -->
+        <p  style = "font-size: 25px;" name="appNotes" id = "appNotes" style="width:500px; height:200px; top: 500px;"></p><br>
+        </div>
+
+        <div class = "mpres">
+        <label style="font-size: 20px;" for="presMed" style="position: relative; left: 10px;">Medication Prescribed:</label><br>
+        <!-- <input type="text" id="presMed" name="presMed"><br> -->
+        <p style = "font-size:25px;"  name="presMed" id ="script" style="width:500px; height:200px;"></p><br>
+        </div>
+    </form>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/getAppointmentData.js"></script>
+
+</html>

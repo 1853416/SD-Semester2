@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+     <!-- Cool Google Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+     <!-- Our stylesheet -->
+    <link rel="stylesheet" type="text/css" href="../Styles/settings.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Help Page</title>
+
+</head>
+
+   <body>
+
+    <img class = "logo" src="../Images/logo.jpeg" width="75">
+
+        <h1>Not Discovery Support</h1><br>
+
+        <h2>How Can We Help You?</h2>
+
+        <button type="button" class="collapsible">Contact Us</button>
+        <div class="content">
+        <ul>    
+        <li style="color:#777 ;"><p>Email Address: NotDiscovery@gmail.com</p></li>
+        <li style="color:#777 ;"><p>For all your user enquiries contact: NotDiscoveryHelp@gmail.com</p></li>
+        <li style="color:#777 ;"><p>Tech Support Services: 073 654 9015</p></li>
+        </ul>
+        </div>
+        
+        <button type="button" class="collapsible">Additional Contact Information and Services</button>
+        <div class="content">
+        <ul>
+        <li style="color:#777 ;"><p>Emergency number: 10111</p></li>
+        <li style="color:#777 ;"><p>Medical Emergency Contact: 083 560 7101</p></li>
+        <li style="color:#777 ;"><p>Lifeline: 021 461 1113</p></li>
+        <li style="color:#777 ;"><p>Mental Health Line: 011 234 4837</p></li>
+        <li style="color:#777 ;"><p>Child emergency line: 0800 123 321</p></li>
+        </ul>
+        </div>
+
+        <button type="button" class="collapsible">About Us</button>
+        <div class="content">
+          <p>Not Discovery, is the future of viewing and managing patient data. 
+            Not only is our goal is to improve doctor patient relationships
+            but we also aim to provide you with a stress free expierence when it comes to making a doctors
+            appointment for any and all your personal medical needs.
+            All our doctors are professionals in their field and strive to provide you with the highest quality care.
+ 
+            We thank you for choosing Not Discovery and we'd like to ensure that your health is our number one priorty.</p>
+        </div>
+
+           <h5>Not Discovery - proudly brought to you by:</h5>
+               
+                   <p class = "p2">Zahraa Akhalwaya</p>
+                   <p class = "p2">Ryan Alexander</p>
+                   <p class = "p2">Mahdiyah Manjra</p>
+                   <p class = "p2">Deshan Murugan</p>
+                   <p class = "p2">Xin Nian</p>
+                   <p class = "p2">Kineta Padiachee</p>
+                   <p class = "p2">Mellisha Reddy</p>
+                   <p class = "p2">Bianco Van Der Ross </p> 
+
+        <br>
+        <p class = "p2" style="color: black;">Copyright 2021 | All Rights Reserved</p> 
+       
+       <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "inline-block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "inline-block";
+            }
+          });
+        }
+        </script>
+   </body>
+
+   
+
+</html>
