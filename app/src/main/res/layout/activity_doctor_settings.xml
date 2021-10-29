@@ -29,7 +29,7 @@
         android:layout_marginTop="50dp"
         android:layout_below="@id/TV_A_DoctorSetting_Title"
 
-        android:backgroundTint="@color/bluePatient"
+        android:backgroundTint="@color/bluePatient2"
         android:text="Privacy Policy" />
 
     <Button
@@ -40,7 +40,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@id/B_A_DoctorSetting_Policy"
 
-        android:backgroundTint="@color/bluePatient"
+        android:backgroundTint="@color/bluePatient2"
         android:text="Update My Information" />
 
     <Button
@@ -51,7 +51,7 @@
         android:layout_marginTop="20dp"
         android:layout_below="@id/B_A_DoctorSetting_Update_Info"
 
-        android:backgroundTint="@color/bluePatient"
+        android:backgroundTint="@color/bluePatient2"
         android:text="Change Password" />
 
 </RelativeLayout>
