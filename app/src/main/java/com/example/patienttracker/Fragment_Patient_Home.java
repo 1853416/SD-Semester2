@@ -108,8 +108,6 @@ public class Fragment_Patient_Home extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_patient, container, false);
 
-        getUpcomingBooking();
-
         tv_userFirstName = view.findViewById(R.id.TV_F_Patient_First_Name);
         tv_userLastName = view.findViewById(R.id.TV_F_Patient_Last_Name);
         tv_userPhone = view.findViewById(R.id.TV_F_Patient_Phone);
@@ -143,6 +141,8 @@ public class Fragment_Patient_Home extends Fragment {
     public void onStart() {
         super.onStart();
 
+        getUpcomingBooking();
+
         btn_booking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,7 +173,7 @@ public class Fragment_Patient_Home extends Fragment {
 
     }//end of onStart
 
-    private String  formatDate(long date){
+    private String formatDate(long date){
         @SuppressLint("SimpleDateFormat")
         SimpleDateFormat format = new SimpleDateFormat(dateFormatPatten);
         return format.format(date);
