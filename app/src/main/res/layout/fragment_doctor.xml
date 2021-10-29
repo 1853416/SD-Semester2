@@ -12,9 +12,32 @@
     tools:ignore="HardcodedText">
 
     <RelativeLayout
+        android:id="@+id/RL_F_Doctor_Tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/IV_Setting"
+            android:layout_width="31dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_setting" />
+        <ImageView
+            android:id="@+id/IV_Help"
+            android:layout_width="25dp"
+            android:layout_height="34dp"
+            android:layout_toStartOf="@+id/IV_Setting"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_help" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/RL_F_DoctorH_Name"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="100dp"
+        android:layout_below="@id/RL_F_Doctor_Tools">
+
         <ImageView
             android:id="@+id/IV_F_DoctorH_profile"
             android:layout_width="100dp"
@@ -25,9 +48,8 @@
 
         <TextView
             android:id="@+id/TV_F_DoctorH_First_Name"
-            android:layout_width="211dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_toEndOf="@+id/IV_F_DoctorH_profile"
 
             android:gravity="bottom"
@@ -55,21 +77,6 @@
             android:text="UserID"
             android:textColor="@color/pureWhite"
             android:textSize="12sp" />
-        <ImageView
-            android:id="@+id/IV_Help"
-            android:layout_width="25dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="24dp"
-            android:layout_toEndOf="@+id/TV_F_DoctorH_First_Name"
-            android:src="@drawable/ic_help" />
-
-        <ImageView
-            android:id="@+id/IV_Setting"
-            android:layout_width="31dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="52dp"
-            android:layout_toEndOf="@+id/TV_F_DoctorH_First_Name"
-            android:src="@drawable/ic_setting" />
     </RelativeLayout>
 
     <RelativeLayout

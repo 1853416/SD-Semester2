@@ -11,64 +11,72 @@
     android:background="@color/bluePatient2">
 
     <RelativeLayout
+        android:id="@+id/RL_F_Patient_Tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/IV_Setting"
+            android:layout_width="31dp"
+            android:layout_height="34dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_setting" />
+        <ImageView
+            android:id="@+id/IV_Help"
+            android:layout_width="25dp"
+            android:layout_height="34dp"
+            android:layout_toStartOf="@+id/IV_Setting"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_help" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
         android:id="@+id/RL_F_Patient_Name"
         android:layout_width="match_parent"
-        android:layout_height="120dp">
+        android:layout_height="100dp"
+        android:layout_below="@id/RL_F_Patient_Tools">
+
         <ImageView
             android:id="@+id/IV_F_Patient_profile"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_alignParentBottom="true"
-            android:src="@drawable/ic_account_box"
-            android:contentDescription="user icon"/>
+            android:contentDescription="user icon"
+            android:src="@drawable/ic_account_box" />
 
         <TextView
             android:id="@+id/TV_F_Patient_First_Name"
-            android:layout_width="211dp"
-            android:layout_height="51dp"
-            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
             android:layout_toEndOf="@+id/IV_F_Patient_profile"
 
             android:gravity="bottom"
             android:text="First Name"
             android:textColor="@color/pureWhite"
             android:textSize="30sp" />
+
         <TextView
             android:id="@+id/TV_F_Patient_Last_Name"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            android:layout_toEndOf="@+id/IV_F_Patient_profile"
             android:layout_below="@+id/TV_F_Patient_First_Name"
+            android:layout_toEndOf="@+id/IV_F_Patient_profile"
 
             android:text="Last Name"
             android:textColor="@color/pureWhite"
             android:textSize="20sp" />
+
         <TextView
             android:id="@+id/TV_F_Patient_userID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/IV_F_Patient_profile"
             android:layout_below="@+id/TV_F_Patient_Last_Name"
+            android:layout_toEndOf="@+id/IV_F_Patient_profile"
 
             android:text="UserID"
             android:textColor="@color/pureWhite"
-            android:textSize="12sp"/>
-
-        <ImageView
-            android:id="@+id/IV_Help"
-            android:layout_width="25dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="24dp"
-            android:layout_toEndOf="@+id/TV_F_Patient_First_Name"
-            android:src="@drawable/ic_help" />
-
-        <ImageView
-            android:id="@+id/IV_Setting"
-            android:layout_width="31dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="52dp"
-            android:layout_toEndOf="@+id/TV_F_Patient_First_Name"
-            android:src="@drawable/ic_setting" />
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <RelativeLayout
