@@ -92,7 +92,7 @@ public class Fragment_Doctor_History extends Fragment {
 
 
     private void loadAppointments(){
-        ArrayList<Note_Appointment_Doctor_extra> appointmentHistories = new ArrayList<>();
+        ArrayList<Appointment_Doctor_extra> appointmentHistories = new ArrayList<>();
         collectionBookingReference
                 .whereEqualTo("doctor_documentID", myuserphone)
                 .orderBy("date", Query.Direction.ASCENDING)
@@ -127,7 +127,7 @@ public class Fragment_Doctor_History extends Fragment {
                                                     String temp_name2 = (String) documentSnapshot.get("LastName");
                                                     String pateintEmail = (String) documentSnapshot.get("Email");
                                                     String name_patient = temp_name1+ " " +temp_name2;
-                                                    appointmentHistories.add(new Note_Appointment_Doctor_extra(date + " " + time, documentID, name_patient, PatientID,pateintEmail));
+                                                    appointmentHistories.add(new Appointment_Doctor_extra(date + " " + time, documentID, name_patient, PatientID,pateintEmail));
                                                     mAdapter = new Adapter_Appointment_Doctor(appointmentHistories);
                                                     mRecyclerView.setLayoutManager(mlayoutManager);
                                                     mRecyclerView.setAdapter(mAdapter);
