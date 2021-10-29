@@ -52,6 +52,18 @@
             android:textSize="18sp"
             android:textColor="@color/pureWhite"/>
 
+        <Button
+            android:id="@+id/B_C_Appointment_Cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="50dp"
+            android:layout_below="@id/TV_C_Appointment_Number"
+            android:backgroundTint="@color/pureRed"
+            android:text="Cancel Appointment"
+            android:fontFamily="@font/consola"
+            android:textSize="15sp"
+            />
+
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

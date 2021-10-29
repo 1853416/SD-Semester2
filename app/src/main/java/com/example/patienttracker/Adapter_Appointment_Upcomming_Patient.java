@@ -32,7 +32,7 @@ public class Adapter_Appointment_Upcomming_Patient extends RecyclerView.Adapter<
     @NonNull
     @Override
     public AppointmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_appointment_upcomming,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_appointment_upcomming_patient,parent,false);
 //        AppointmentViewHolder avh = new AppointmentViewHolder(v);
         return new AppointmentViewHolder(v);
     }
