@@ -1,9 +1,11 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Appointment {
     Patient patient;
     Doctors doctors = new Doctors();
+
     public Appointment(){
         //Initialize list of doctors for patient to choose from
        Doctor doctor = new Doctor("jackxnian@gmail.com","Dentist","Xin","Nian",
@@ -61,5 +63,9 @@ public class Appointment {
         else{
             return "Failed to Save";
         }
+    }
+
+    public void makeAppointment(){
+
     }
 }
