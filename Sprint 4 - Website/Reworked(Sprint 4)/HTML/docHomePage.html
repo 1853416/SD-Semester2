@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/homepages.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Doctor Home</title>
+
+</head>
+
+<body onload = "pullBook()">
+    <div class="headerd">
+        <img class = "logo" src="../Images/logo.jpeg" width="50;">
+        <h1> Not Discovery </h1>
+        
+        <div class = "droph">
+            <button class="horizontal" id="current" onclick = "location.href = '';">Home</button>
+        </div>
+
+        <div class = "dropb">
+            <button class="horizontal" id="current" onclick = "location.href = '../HTML/docAvail.html';">Available Bookings</button>
+        </div>
+
+        <div class = "dropt">
+            <button class="horizontal" id="current" onclick = "location.href = 'appointmentHistoryDoc.html';">Appointment History</button>
+        </div>
+
+        <div class = "drops">
+            <button class="horizontal"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <button class="vert" onclick = "location.href = '../HTML/updatedSettingsD.html';">Settings</button>
+                <button class="vert" onclick = "location.href = '../HTML/help.html';">Help</button>
+            </div>
+        </div>
+    
+    </div>
+
+    <img class="doc" src="../Images/doc.jpg" width="175">
+
+    <h2 id="DrNamehead"></h2>
+    <h2>Appointments</h2>
+
+    <div class="card">
+        <h3>Pharook Adams</h3>
+        <p class="p1">29/09/2021</p>
+        <p class="p2">11:00</p>
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+        
+        <h4>Contact Details</h4>
+        <p class="p3">0836547899</p>
+        <p class="p4">pa@gmail.com</p>
+
+        <p><a href="../HTML/appointmentForm.html">Create Appointment Form</a></p>
+        <p><a href="">Cancel</a></p>
+
+        <div class="">1 / 3</div>
+
+    </div>
+
+    <!--<div class="card">
+        <h3>Jim Jones</h3>
+        <p class="p1">29/09/2021</p>
+        <p class="p2">12:00</p>
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+        
+        <h4>Contact Details</h4>
+        <p class="p3">0635489654</p>
+        <p class="p4">jj23@gmail.com</p>
+
+        <p><a href="../HTML/appointmentForm.html">Create Appointment Form</a></p>
+        <p><a href="">Cancel</a></p>
+
+        <div class="">2 / 3</div>
+
+    </div>
+
+    <div class="card">
+        <h3>Wally Smith</h3>
+        <p class="p1">30/09/2021</p>
+        <p class="p2">09:00</p>
+
+
+        <div style="width:90%; padding: 10px 20px" >
+            <hr>
+        </div>
+        
+        <h4>Contact Details</h4>
+        <p class="p3">07425698745</p>
+        <p class="p4">wallys3@ymail.com</p>
+
+        <p><a href="../HTML/appointmentForm.html">Create Appointment Form</a></p>
+        <p><a href="">Cancel</a></p>
+
+        <div class="">3 / 3</div>
+
+    </div>-->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/DocHome.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+  
+</body>

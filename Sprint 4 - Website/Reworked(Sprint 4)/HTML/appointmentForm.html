@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Appointment Form</title>
+    <link rel="stylesheet" type="text/css" href="../Styles/appointmentForm.css" />
+
+</head>
+
+<body>
+
+    <img src="../Images/logo.jpeg" width="75;" style="text-align: centre;">
+    <h1>Appointment Form</h1>
+
+    <form>
+        <label for="pname">Patient's Name:</label>
+        <input type="text" id="pname" name="pname" style="width:400px; height:30px;"><br> 
+    
+        <div class = "dov">
+        <label for="dateOfVisit">Date of Visit:</label>
+        <input type="text" id="dateOfVisit" name="dateOfVisit" style="width:400px; height:30px; top: 500px;"><br>
+        </div>
+
+        <div class = "napp">
+        <label for="appNotes" style="position: relative; left: -125px;">Notes from the Appoinment:</label><br>
+        <!-- <input type="text" id="appNotes" name="appNotes"><br> -->
+        <textarea name="appNotes" id='appNotes' style="width:500px; height:200px; top: 500px;"></textarea><br>
+        </div>
+
+        <div class = "mpres">
+        <label for="presMed" style="position: relative; left: -100px;">Medication Prescribed:(*Optional)</label><br>
+        <!-- <input type="text" id="presMed" name="presMed"><br> -->
+        <textarea name="presMed" id='script' style="width:500px; height:200px;"></textarea><br>
+        </div>
+
+        <!-- <div class = "rel">
+        <label for="dprel">Doctor Patient Relationship:</label><br>
+        <input type="text" id="dprel" name="dprel" style="width:400px; height:30px;"><br> 
+        </div> -->
+
+    </form>
+
+    <script>
+        function popUpAlert() {
+          alert("Appoinmnet information has been saved.");
+        }
+    </script>
+
+    <button class = "save" id='btnSave'>Save Form</button>
+    <button class = "cancel" onclick="location.href = '../HTML/docHomePage.html';" >Cancel</button>
+    
+
+</body>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/appoint.js"></script>
+
+</html>
