@@ -26,8 +26,8 @@ public class Adapter_Appointment_Upcoming_Doctor extends FirestoreRecyclerAdapte
     @Override
     protected void onBindViewHolder(@NonNull Holder_Note_Booking_Upcoming_Doctor holder, int position, @NonNull Note_Booking model) {
         holder.tv_DateTime.setText(model.getDate() + " " + model.getTime());
-        holder.tv_patientName.setText(model.getDoctor_fullName());
-        holder.tv_patientNumber.setText(model.getDoctor_documentID());
+        holder.tv_patientName.setText(model.getPatient_fullName());
+        holder.tv_patientNumber.setText(model.getPatient_documentID());
 
     }
 
