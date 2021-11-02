@@ -51,26 +51,25 @@
             android:id="@+id/LL_C_Appointment_Buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_below="@+id/TV_C_Appointment_doctor_number"
-            >
+            android:orientation="horizontal">
 
             <Button
                 android:id="@+id/B_C_Appointment_View"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
-                android:text="View "
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:text="View " />
 
             <Button
                 android:id="@+id/B_C_Appointment_Missed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
+                android:layout_weight="1"
                 android:backgroundTint="@color/pureRed"
-                android:text="Missed"
-                android:layout_weight="1"/>
+                android:text="Missed" />
         </LinearLayout>
 
 
