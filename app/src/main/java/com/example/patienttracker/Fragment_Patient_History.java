@@ -1,4 +1,5 @@
 package com.example.patienttracker;
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import java.util.Calendar;
@@ -74,6 +76,15 @@ public class Fragment_Patient_History extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.RV_F_Patient_History);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(adapter);
+
+        adapter.setOnItemClickListener(new Adapter_Appointment_History_Doctor.OnItemClickListener() {
+            @Override
+            public void onItemCLick(DocumentSnapshot documentSnapshot, int position) {
+                Intent intent = new Intent(getContext(),Activity_Patient_ViewAppointment.class);
+                intent.putExtra("Appointment_Document_ID", documentSnapshot.getId());
+                startActivity(intent);
+            }
+        });
 
         return view;
     }

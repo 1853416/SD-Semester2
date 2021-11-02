@@ -51,8 +51,8 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/TV_C_Appointment_doctor_number"
             android:layout_centerHorizontal="true"
-            android:text="View Appointment Form"
-            android:backgroundTint="@color/bluePatient"/>
+            android:backgroundTint="@color/bluePatient"
+            android:text="View Appointment Form" />
 
     </RelativeLayout>
 

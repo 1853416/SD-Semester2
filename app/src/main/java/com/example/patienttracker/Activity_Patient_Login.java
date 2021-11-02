@@ -209,7 +209,6 @@ public class Activity_Patient_Login extends AppCompatActivity {
                         if (documentSnapshot.exists()){
                             //patient found with the entered phone number
                             patientData = documentSnapshot.getData();
-
                             validateOnlinePassword(patientData);
                         }else {
                             //no patient with that phone number found

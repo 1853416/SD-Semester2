@@ -20,6 +20,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.Serializable;
 import java.util.Map;
 
 public class Activity_Patient_ViewAppointment extends AppCompatActivity {
@@ -27,11 +28,11 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
     //variable
     private static final String TAG = "Activity Doctor Set Appointment";
     private static final String documentKey = "Appointment_Document_ID";
-    private static final String datetimeKey = "Appointment_Date_Time";
 
     private String
             documentID_Booking, documentID_Doctor, documentID_Patient,
-            datetime, description, prescription;
+            description, prescription,
+            email_doctor,email_patient;
 
     private Map<String, Object> patientData ;
 
@@ -45,8 +46,8 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
 
     //database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionDoctorReference = db.collection("Doctor");
     private CollectionReference collectionBookingReference = db.collection("Booking");
+    private CollectionReference collectionDoctorReference = db.collection("Doctor");
     private CollectionReference collectionPatientReference = db.collection("Patient");
 
 
@@ -59,7 +60,6 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
         //get variables
         final Intent intent = getIntent();
         documentID_Booking = intent.getStringExtra(documentKey);
-        datetime    = intent.getStringExtra(datetimeKey);
 
         tv_name_doctor  = findViewById(R.id.TV_A_Appointment_View_Doctor);
         tv_name_patient = findViewById(R.id.TV_A_Appointment_View_Patient);
@@ -80,12 +80,38 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
         getAppointmentForm();
 
     }
+    private void getPatientData() {
+        collectionPatientReference
+                .document(documentID_Patient)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Note_Patient note_patient = documentSnapshot.toObject(Note_Patient.class);
+                        email_patient = note_patient.getEmail();
+                        patientData = documentSnapshot.getData();
+                    }
+                });
+    }
+
+    private void getDoctorData() {
+        collectionDoctorReference
+                .document(documentID_Doctor)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Note_Doctor note_doctor = documentSnapshot.toObject(Note_Doctor.class);
+                        email_doctor = note_doctor.getEmail();
+                    }
+                });
+    }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        tv_datetime     .setText("Date & Time : " + datetime);
 
         btn_back.setOnClickListener(v -> {
             onBackPressed();
@@ -103,51 +129,11 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
                         assert note != null;
                         documentID_Doctor = note.getDoctor_documentID();
                         documentID_Patient = note.getPatient_documentID();
-                        getNames();
-                    }
-                });
-    }
-
-    public void  getNames(){
-        collectionDoctorReference
-                .document(documentID_Doctor)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Note_Doctor note = documentSnapshot.toObject(Note_Doctor.class);
-                        assert note != null;
-                        tv_name_doctor.setText("Doctor : " + note.getFirstName() + " " + note.getLastName());
-                        tv_doctor_field.setText("Doctor Field : " + note.getFields());
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        tv_name_doctor.setText("ERROR GETTING DOCTOR NAME");
-                    }
-                });
-
-        collectionPatientReference
-                .document(documentID_Patient)
-                .get()
-                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        Note_Patient note = documentSnapshot.toObject(Note_Patient.class);
-                        assert note != null;
-                        tv_name_patient .setText("Patient : " + note.getFirstName() + " " + note.getLastName());
-
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        tv_name_patient .setText("ERROR GETTING PATIENT NAME");
+                        getDoctorData();
+                        getPatientData();
+                        tv_datetime.setText("Date & Time: " + note.getDate() + " " + note.getTime());
+                        tv_name_doctor.setText("Doctor: " + note.getDoctor_fullName());
+                        tv_name_patient.setText("Patient: " + note.getPatient_fullName());
                     }
                 });
     }
@@ -157,17 +143,14 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
                 .collection("SubCollection").document("Form")
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         Note_Appointment_Form note = documentSnapshot.toObject(Note_Appointment_Form.class);
                         if (note != null){
-                            Log.d(TAG, "Description : " + note.getDescription() + " : " + note.getPrescription());
                             et_description.setText(note.getDescription());
                             et_prescription.setText(note.getPrescription());
                         }else{
-                            et_description.setText("seems like doctor hasn't upload this information");
-                            et_prescription.setText("seems like doctor hasn't upload this information");
+                            Log.d(TAG, "onSuccess: note = null");
                         }
                     }
                 })
@@ -178,9 +161,16 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
                     }
                 });
     }
+    private void backToPatientPage() {
+        Intent intent = new Intent(this, Activity_Patient.class);
+        //passing values to user activity
+        intent.putExtra(Activity_Patient_Login.patientDataKEY, (Serializable) patientData);
+        intent.putExtra(Activity_Patient_Login.patientPhoneKEY,documentID_Doctor);
+        startActivity(intent);
+    }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        backToPatientPage();
     }
 }

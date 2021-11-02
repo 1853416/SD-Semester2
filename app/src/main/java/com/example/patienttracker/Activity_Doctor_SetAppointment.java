@@ -34,7 +34,9 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
     private static final String datetimeKey = "Appointment_Date_Time";
 
     private String
-            documentID_Booking, documentID_Doctor, documentID_Patient, description, prescription;
+            documentID_Booking, documentID_Doctor, documentID_Patient,
+            description, prescription,
+            email_doctor,email_patient;
 
     private Map<String, Object> doctorData ;
 
@@ -49,6 +51,8 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
     //database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference collectionBookingReference = db.collection("Booking");
+    private CollectionReference collectionDoctorReference = db.collection("Doctor");
+    private CollectionReference collectionPatientReference = db.collection("Patient");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,6 +79,35 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
 
         getAppointmentDetails();
         getAppointmentForm();
+    }
+
+    private void getPatientData() {
+        collectionPatientReference
+                .document(documentID_Patient)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Note_Patient note_patient = documentSnapshot.toObject(Note_Patient.class);
+                        email_patient = note_patient.getEmail();
+                    }
+                });
+    }
+
+    private void getDoctorData() {
+        collectionDoctorReference
+                .document(documentID_Doctor)
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        Note_Doctor note_doctor = documentSnapshot.toObject(Note_Doctor.class);
+                        email_doctor = note_doctor.getEmail();
+                        doctorData = documentSnapshot.getData();
+                    }
+                });
     }
 
     @SuppressLint("SetTextI18n")
@@ -127,6 +160,8 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
                         assert note != null;
                         documentID_Doctor = note.getDoctor_documentID();
                         documentID_Patient = note.getPatient_documentID();
+                        getDoctorData();
+                        getPatientData();
                         tv_datetime.setText("Date & Time: " + note.getDate() + " " + note.getTime());
                         tv_name_doctor.setText("Doctor: " + note.getDoctor_fullName());
                         tv_name_patient.setText("Patient: " + note.getPatient_fullName());
@@ -182,16 +217,25 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressed();
+                backToDoctorPage();
             }
+
+
         });
     }
     private void openFailDialog() {
 
     }
+    private void backToDoctorPage() {
+        Intent intent = new Intent(this, Activity_Doctor.class);
+        //passing values to user activity
+        intent.putExtra(Activity_Doctor_Login.doctorDataKEY, (Serializable) doctorData);
+        intent.putExtra(Activity_Doctor_Login.doctorPhoneKEY,documentID_Doctor);
+        startActivity(intent);
+    }
 
     @Override
     public void onBackPressed() {
-        super.onBackPressed();
+        backToDoctorPage();
     }
 }

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -11,9 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 
 public class Adapter_Appointment_History_Patient extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_History_Patient.Holder_Note_Appointment_History_Patient>{
-
+    private Adapter_Appointment_History_Doctor.OnItemClickListener listener;
     public Adapter_Appointment_History_Patient(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
         super(options);
     }
@@ -41,13 +43,31 @@ public class Adapter_Appointment_History_Patient extends FirestoreRecyclerAdapte
         TextView tv_DoctorName;
         TextView tv_DoctorNumber;
 
+        Button btn_view;
+
         public Holder_Note_Appointment_History_Patient(@NonNull View itemView) {
             super(itemView);
             tv_DateTime = itemView.findViewById(R.id.TV_C_Appointment_dateTime);
             tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_patient_fullName);
             tv_DoctorNumber = itemView.findViewById(R.id.TV_C_Appointment_doctor_number);
+            btn_view = itemView.findViewById(R.id.B_C_Appointment_View);
 
+            btn_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int position = getBindingAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION && listener != null){
+                        listener.onItemCLick(getSnapshots().getSnapshot(position),position);
+                    }
+                }
+            });
         }
     }
+    public interface OnItemClickListener{
+        void onItemCLick(DocumentSnapshot documentSnapshot, int position);
+    }
 
+    public void setOnItemClickListener(Adapter_Appointment_History_Doctor.OnItemClickListener listener){
+        this.listener = listener;
+    }
 }
