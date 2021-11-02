@@ -17,7 +17,7 @@
         android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/TV_C_Appointment_AppDate"
+            android:id="@+id/TV_C_Appointment_dateTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
@@ -27,28 +27,29 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TV_C_Appointment_Name"
+            android:id="@+id/TV_C_Appointment_doctor_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_AppDate"
+            android:layout_below="@id/TV_C_Appointment_dateTime"
             android:text="Name"
             android:textColor="@color/pureWhite"
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/TV_C_Appointment_Number"
+            android:id="@+id/TV_C_Appointment_doctor_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_Name"
+            android:layout_below="@id/TV_C_Appointment_doctor_fullName"
             android:text="Number"
             android:textColor="@color/pureWhite"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/LL_C_Appointment_Buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@+id/TV_C_Appointment_Number"
+            android:layout_below="@+id/TV_C_Appointment_doctor_number"
             >
 
             <Button
@@ -60,7 +61,7 @@
                 android:layout_weight="1"/>
 
             <Button
-                android:id="@+id/B_C_Missed_Appointment"
+                android:id="@+id/B_C_Appointment_Missed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"

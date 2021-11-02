@@ -12,7 +12,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,6 @@ import android.widget.CalendarView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -41,7 +39,6 @@ import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.mail.Address;
 import javax.mail.Authenticator;
 import javax.mail.Message;
 import javax.mail.MessagingException;
@@ -57,7 +54,7 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
     private static final String TAG = "Activity Patient Booking Select";
 
     //variables
-    private String doctor_document_id,doctor_document_email,doctor_document_name,patient_document_id, patient_document_email,patient_document_firstName,patient_document_lastName;
+    private String doctor_document_id, doctor_email, doctor_fullName,patient_document_id, patient_document_email,patient_document_firstName,patient_document_lastName;
     private Note_Doctor doctor_information;
     public String selectedDate,selectedDayOfWeek;
     private final long dateToday = new Date().getTime();
@@ -120,8 +117,8 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
         patient_document_firstName = intent.getStringExtra(Fragment_Patient_Home.firstNameKey);
         patient_document_lastName = intent.getStringExtra(Fragment_Patient_Home.lastNameKey);
         doctor_document_id = intent.getStringExtra(Activity_Patient_Booking_Select_Doctor.doctorInformationKey);
-        doctor_document_email = intent.getStringExtra(Activity_Patient_Booking_Select_Doctor.doctorEmailKey);
-        doctor_document_name = intent.getStringExtra(Activity_Patient_Booking_Select_Doctor.doctorNameKey);
+        doctor_email = intent.getStringExtra(Activity_Patient_Booking_Select_Doctor.doctorEmailKey);
+        doctor_fullName = intent.getStringExtra(Activity_Patient_Booking_Select_Doctor.doctorNameKey);
         //set widgets view
         calendarView = findViewById(R.id.CV_A_PatientBookingSelect_Calender);
         calendarView.setMinDate((dateToday));//set CalendarView MinDate to "today"
@@ -670,7 +667,7 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
                             +"Booking confirmed for "
                             +selectedDate +"\n"
                             +"Doctor name: "
-                            +doctor_document_name+"\n";
+                            + doctor_fullName +"\n";
                     Properties props = new Properties();
                     props.put("mail.smtp.auth","true");
                     props.put("mail.smtp.starttls.enable","true");
@@ -689,7 +686,7 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
                         Message message = new MimeMessage(session);
                         message.setFrom(new InternetAddress(Username));
                         Log.d(TAG, "Patient Email in email task"+ patient_document_email);
-                        String SendList = doctor_document_email +","+patient_document_email;
+                        String SendList = doctor_email +","+patient_document_email;
                         message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(SendList) );
                         message.setSubject("Not Discovery Booking Confirmation");
                         message.setText(MessagetoSend);
@@ -704,7 +701,7 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
 
     private void bookTimeSlot(String timeSlot){
         Note_Booking note_booking = new Note_Booking(
-                selectedDate,today,timeSlot,doctor_document_id,patient_document_id,noteIsHalfHourSlots);
+                selectedDate,today,timeSlot,doctor_document_id,patient_document_id,noteIsHalfHourSlots,doctor_fullName,patient_document_firstName + " " + patient_document_lastName);
 
         collectionBookingReference.add(note_booking)
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {

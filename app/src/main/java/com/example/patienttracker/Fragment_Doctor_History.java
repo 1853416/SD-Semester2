@@ -83,65 +83,13 @@ public class Fragment_Doctor_History extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_doctor_history, container, false);
-        mRecyclerView = view.findViewById(R.id.recyclerView);
-        mRecyclerView.setHasFixedSize(true);
-        mlayoutManager = new LinearLayoutManager(getContext());
+
         loadAppointments();
         return view;
     }//end of onCreteView
 
 
     private void loadAppointments(){
-        ArrayList<Note_Appointment_Doctor_extra> appointmentHistories = new ArrayList<>();
-        collectionBookingReference
-                .whereEqualTo("doctor_documentID", myuserphone)
-                .orderBy("date", Query.Direction.ASCENDING)
-                .orderBy("timeSlot", Query.Direction.ASCENDING)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (!task.getResult().isEmpty()){
-                            for(QueryDocumentSnapshot document : task.getResult()){
-                                Log.d(TAG, "debug adapter" + document.getId() + " => " + document.getData());
-                                Note_Booking note = document.toObject(Note_Booking.class);
-                                String date = note.getDate();
-                                String timeSlot = note.getTimeSlot();
-                                String PatientID = note.getPatient_documentID();
-                                Boolean isHalfHour = note.getDoctor_isHalfHourSlot();
-                                String time = getTime(timeSlot,isHalfHour);
-                                String documentID = document.getId();
-                                Boolean isBefore = false;
-                                try {
-                                    isBefore = checkDate(date);
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-                                if(isBefore){
-                                    collectionPatientReference.document(PatientID)
-                                            .get()
-                                            .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                                                @Override
-                                                public void onSuccess(DocumentSnapshot documentSnapshot) {
-                                                    String temp_name1 = (String) documentSnapshot.get("FirstName");
-                                                    String temp_name2 = (String) documentSnapshot.get("LastName");
-                                                    String pateintEmail = (String) documentSnapshot.get("Email");
-                                                    String name_patient = temp_name1+ " " +temp_name2;
-                                                    appointmentHistories.add(new Note_Appointment_Doctor_extra(date + " " + time, documentID, name_patient, PatientID,pateintEmail));
-                                                    mAdapter = new Adapter_Appointment_Doctor(appointmentHistories);
-                                                    mRecyclerView.setLayoutManager(mlayoutManager);
-                                                    mRecyclerView.setAdapter(mAdapter);
-                                                }
-                                            });
-                                }
-                            }
-                        }else{
-                            Toast.makeText(getContext(), "empty", Toast.LENGTH_SHORT).show();
-                        }
-
-                    }
-
-                });
 
     }
     private String  formatDate(long date){

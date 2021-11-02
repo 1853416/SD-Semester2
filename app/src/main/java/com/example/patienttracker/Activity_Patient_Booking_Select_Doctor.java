@@ -218,17 +218,17 @@ public class Activity_Patient_Booking_Select_Doctor extends AppCompatActivity {
                 .setOnItemClickListener(new Adapter_Doctor.OnItemClickListener() {
                     @Override
                     public void onItemClick(DocumentSnapshot documentSnapshot, int position) {
-                        String DocName = documentSnapshot.toObject(Note_Doctor.class).getFirstName()+" "+documentSnapshot.toObject(Note_Doctor.class).getLastName();
-                        selectTime(documentSnapshot.getId(),documentSnapshot.toObject(Note_Doctor.class).getEmail(),DocName);
+                        String doctor_fullName = documentSnapshot.toObject(Note_Doctor.class).getFirstName()+" "+documentSnapshot.toObject(Note_Doctor.class).getLastName();
+                        selectTime(documentSnapshot.getId(),documentSnapshot.toObject(Note_Doctor.class).getEmail(),doctor_fullName);
                     }
                 });
     }
 
-    private void selectTime(String doctor_document_id, String doctor_document_email, String doctor_document_name) {
+    private void selectTime(String doctor_document_id, String doctor_document_email, String doctor_fullName) {
         Intent intent = new Intent(this, Activity_Patient_Booking_Select_Time.class);
         intent.putExtra(doctorInformationKey, doctor_document_id);
         intent.putExtra(doctorEmailKey, doctor_document_email);
-        intent.putExtra(doctorNameKey,doctor_document_name);
+        intent.putExtra(doctorNameKey,doctor_fullName);
         intent.putExtra(Fragment_Patient_Home.phoneKey, patient_document_id);
         intent.putExtra(Fragment_Patient_Home.emailKey, patient_document_email);
         intent.putExtra(Fragment_Patient_Home.firstNameKey, patient_first_Name);

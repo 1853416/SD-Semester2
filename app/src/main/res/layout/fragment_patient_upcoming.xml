@@ -3,14 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment_Patient_Lookup">
+    tools:context=".Fragment_Patient_Upcoming"
 
-    <TextView
+    tools:ignore="HardcodedText"
+    android:background="@color/bluePatient2">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RV_F_Patient_Upcoming"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Patient Lookup Page"
-        android:textSize="36dp"
-        android:textStyle="bold"
-        android:gravity="center"/>
+        android:layout_height="match_parent"/>
+
 
 </FrameLayout>

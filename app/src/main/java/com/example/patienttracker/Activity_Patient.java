@@ -28,7 +28,7 @@ public class Activity_Patient extends AppCompatActivity {
 
     //Fragment
     private Fragment_Patient_Home fragment_patient_home;
-    private Fragment_Patient_Lookup fragment_patient_lookup;
+    private Fragment_Patient_Upcoming fragment_patient_upcoming;
     private Fragment_Patient_History fragment_patient_history;
 
     //Widgets
@@ -52,7 +52,7 @@ public class Activity_Patient extends AppCompatActivity {
         //send data to Each fragment
         fragment_patient_home = Fragment_Patient_Home.newInstance(
                 userFName,userLName,userPhone,userEmail);
-        fragment_patient_lookup = Fragment_Patient_Lookup.newInstance(userPhone);
+        fragment_patient_upcoming = Fragment_Patient_Upcoming.newInstance(userPhone);
         fragment_patient_history = Fragment_Patient_History.newInstance(userPhone);
 
         //Assign variable
@@ -79,7 +79,7 @@ public class Activity_Patient extends AppCompatActivity {
                         break;
                     case 2://When id is 2 Patient lookup
 //                        loadFragment(fragment_patient_lookup);
-                        loadFragment(fragment_patient_lookup);
+                        loadFragment(fragment_patient_upcoming);
 
                         break;
                     case 3://When id is 3 Patient History
