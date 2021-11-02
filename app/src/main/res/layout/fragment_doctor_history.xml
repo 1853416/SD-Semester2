@@ -11,9 +11,26 @@
     android:background="@color/greenDoctor2"
     tools:ignore="HardcodedText">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <EditText
+        android:id="@+id/TITLE"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:text="Appointment History"
+        android:textAlignment="center"
+        android:textColor="@color/pureWhite"
+        android:textSize="35sp"
+        android:fontFamily="@font/keania_one_regular"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_F_Doctor_History"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:layout_below="@id/TITLE" />
+
+    </RelativeLayout>
 
 </ScrollView>
