@@ -26,7 +26,7 @@
             android:textAlignment="center"/>
 
         <TextView
-            android:id="@+id/TV_C_Appointment_doctor_fullName"
+            android:id="@+id/TV_C_Appointment_patient_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/TV_C_Appointment_dateTime"
@@ -39,7 +39,7 @@
             android:id="@+id/TV_C_Appointment_doctor_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_doctor_fullName"
+            android:layout_below="@id/TV_C_Appointment_patient_fullName"
             android:text="Number"
             android:textColor="@color/pureWhite"
             android:textAlignment="center"

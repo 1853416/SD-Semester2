@@ -25,13 +25,8 @@ import java.util.Date;
 
 public class Fragment_Patient_Upcoming extends Fragment {
     //Variables
-    private static final String TAG= "Fragment_Patient_Lookup";
-    public static final String firstNameKey = "firstname";
-    public static final String lastNameKey = "lastname";
     public static final String phoneKey = "phonenumber";
-    public static final String emailKey = "emailaddress";
-    private static final SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
-    private String patient_first_name, patient_last_name, patient_phone, patient_email;
+    private String patient_phone;
 
     //database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -60,10 +55,7 @@ public class Fragment_Patient_Upcoming extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            patient_first_name = getArguments().getString(firstNameKey);
-            patient_last_name = getArguments().getString(lastNameKey);
             patient_phone = getArguments().getString(phoneKey);
-            patient_email = getArguments().getString(emailKey);
         }
 
     }

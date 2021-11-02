@@ -44,7 +44,7 @@ public class Adapter_Appointment_History_Patient extends FirestoreRecyclerAdapte
         public Holder_Note_Appointment(@NonNull View itemView) {
             super(itemView);
             tv_DateTime = itemView.findViewById(R.id.TV_C_Appointment_dateTime);
-            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_doctor_fullName);
+            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_patient_fullName);
             tv_DoctorNumber = itemView.findViewById(R.id.TV_C_Appointment_doctor_number);
 
         }

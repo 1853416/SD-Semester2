@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_Upcoming_Patient.Holder_Note_Booking>{
+public class Adapter_Appointment_Upcoming_Doctor extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_Upcoming_Doctor.Holder_Note_Booking>{
 
-    public Adapter_Appointment_Upcoming_Patient(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
+    public Adapter_Appointment_Upcoming_Doctor(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
         super(options);
     }
 
@@ -26,7 +26,7 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
     @Override
     protected void onBindViewHolder(@NonNull Holder_Note_Booking holder, int position, @NonNull Note_Booking model) {
         holder.tv_DateTime.setText(model.getDate() + " " + model.getTime());
-        holder.tv_DoctorName.setText("Dr." + model.getDoctor_fullName());
+        holder.tv_DoctorName.setText(model.getDoctor_fullName());
         holder.tv_DoctorNumber.setText(model.getDoctor_documentID());
 
     }
@@ -36,7 +36,7 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
     public Holder_Note_Booking onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
-                .inflate(R.layout.card_appointment_upcomming_patient,parent,false);
+                .inflate(R.layout.card_appointment_upcomming_doctor,parent,false);
         return new Holder_Note_Booking(view);
     }
 
@@ -59,7 +59,7 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
         public Holder_Note_Booking(@NonNull View itemView) {
             super(itemView);
             tv_DateTime = itemView.findViewById(R.id.TV_C_Appointment_dateTime);
-            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_patient_fullName);
+            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_doctor_fullName);
             tv_DoctorNumber = itemView.findViewById(R.id.TV_C_Appointment_doctor_number);
             btn_cancel = itemView.findViewById(R.id.B_C_Appointment_Cancel);
 

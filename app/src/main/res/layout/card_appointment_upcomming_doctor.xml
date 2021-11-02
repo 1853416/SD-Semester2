@@ -21,9 +21,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
-            android:textAlignment="center"
-
             android:text="appointment date/time"
+
+            android:textAlignment="center"
             android:textColor="@color/pureWhite"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -46,11 +46,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/TV_C_Appointment_doctor_fullName"
 
-            android:textAlignment="center"
-
             android:text="Number"
-            android:textSize="18sp"
-            android:textColor="@color/pureWhite"/>
+
+            android:textAlignment="center"
+            android:textColor="@color/pureWhite"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/B_C_Appointment_Cancel"

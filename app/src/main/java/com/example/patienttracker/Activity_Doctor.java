@@ -67,9 +67,9 @@ Activity_Doctor extends AppCompatActivity {
 
         //Add Menu items to Bottom Navigation
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_person));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_search));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_availability));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_booking));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_availability));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_booking));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_time));
 
         //Accessing Menu items
         meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -83,15 +83,17 @@ Activity_Doctor extends AppCompatActivity {
                     case 1://When id is 1 Doctor Home Page
                         loadFragment(fragment_doctor_home);
                         break;
-                    case 2://When id is 2 Doctor Search Page
+                    case 2://When id is 2 Doctor upcoming Page
 //                        loadFragment(fragment_doctor_search);
                         loadFragment(fragment_doctor_upcoming);
                         break;
-                    case 3://When id is 3 Doctor Availability
+                    case 3: //when id is 3 Doctor History
+                        loadFragment(fragment_doctor_history);
+                        break;
+                    case 4://When id is 4 Doctor Availability
                         loadFragment(fragment_doctor_availability);
                         break;
-                    case 4: //when id is 4 Doctor History
-                    loadFragment(fragment_doctor_history);
+
 
                 }
             }
