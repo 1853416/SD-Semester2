@@ -29,7 +29,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 public class Adapter_Appointment_Doctor extends RecyclerView.Adapter<Adapter_Appointment_Doctor.AppointmentViewHolder> {
-    private ArrayList<Appointment_Doctor_extra> mAppList;
+    private ArrayList<Note_Appointment_Doctor_extra> mAppList;
     private String patientName, AppDate,patientEmail;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
     private CollectionReference collectionPatientReference = db.collection("Patient");
@@ -49,7 +49,7 @@ public class Adapter_Appointment_Doctor extends RecyclerView.Adapter<Adapter_App
         }
     }
 
-    public Adapter_Appointment_Doctor(ArrayList<Appointment_Doctor_extra> AppHistList){
+    public Adapter_Appointment_Doctor(ArrayList<Note_Appointment_Doctor_extra> AppHistList){
         mAppList = AppHistList;
     }
 
@@ -63,7 +63,7 @@ public class Adapter_Appointment_Doctor extends RecyclerView.Adapter<Adapter_App
 
     @Override
     public void onBindViewHolder(@NonNull AppointmentViewHolder holder, int position) {
-        Appointment_Doctor_extra current = mAppList.get(position);
+        Note_Appointment_Doctor_extra current = mAppList.get(position);
 
         holder.tv_Appointment_Date.setText(current.getAppointmentDateTime());
         holder.tv_Name.setText(current.getName());

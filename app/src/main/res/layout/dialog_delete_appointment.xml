@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="20dp"
         android:backgroundTint="@color/pureBlack">
         <RelativeLayout
             android:layout_width="match_parent"
@@ -28,32 +29,30 @@
                 android:text="Cancel Appointment"
                 android:textAlignment="center"
                 android:textColor="@color/pureWhite"
-                android:textSize="25sp"/>
+                android:textSize="25sp" />
 
 
             <ImageView
                 android:id="@+id/I_D_Delete_logo"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_delete"
                 android:layout_below="@id/TV_D_Delete_Title"
-                android:layout_centerHorizontal="true">
-            </ImageView>
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_delete" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_below="@+id/I_D_Delete_logo"
-                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="10dp"
                 >
                 <Button
                     android:id="@+id/B_D_Delete_Confirm"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:backgroundTint="@color/pureRed"
-                    android:fontFamily="@font/consolab"
+                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="@color/greenDoctor"
+                    android:fontFamily="@font/consola"
                     android:text="Confirm"
                     android:layout_weight="1">
                 </Button>
@@ -62,16 +61,14 @@
                     android:id="@+id/B_D_Delete_Back"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="5dp"
-                    android:backgroundTint="@color/greenDoctor"
-                    android:fontFamily="@font/consolab"
+                    android:layout_marginHorizontal="15dp"
+                    android:backgroundTint="@color/pureRed"
+                    android:fontFamily="@font/consola"
                     android:text="Back"
                     android:layout_weight="1">
                 </Button>
 
             </LinearLayout>
-
-
 
         </RelativeLayout>
 

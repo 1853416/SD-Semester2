@@ -122,5 +122,4 @@ public class Adapter_Appointment_Upcomming_Patient extends RecyclerView.Adapter<
     public int getItemCount() {
         return mAppList.size();
     }
-
 }

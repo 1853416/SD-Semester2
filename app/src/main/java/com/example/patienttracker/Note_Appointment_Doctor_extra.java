@@ -1,17 +1,17 @@
 package com.example.patienttracker;
 
-public class Appointment_Doctor_extra {
+public class Note_Appointment_Doctor_extra {
     private String appointmentDateTime;
     private String documentID;
     private String name;
     private String number;
     private String PateintEmail;
 
-    public Appointment_Doctor_extra(){
+    public Note_Appointment_Doctor_extra(){
         //empty constructor
     }
 
-    public Appointment_Doctor_extra(String appointmentDate, String documentID, String name, String number, String PateintEmail){
+    public Note_Appointment_Doctor_extra(String appointmentDate, String documentID, String name, String number, String PateintEmail){
         this.appointmentDateTime = appointmentDate;
         this.documentID = documentID;
         this.name = name;
