@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+    
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/avail.css" />
+    <link rel="stylesheet" type="text/css" href="../Styles/toast.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Doctor Availibility</title>
+
+</head>
+
+<body>
+    
+  
+
+    <div class="headerd">
+        <img class = "logo" src="../Images/logo.jpeg" width="50;">
+        <h1> Not Discovery </h1>
+        
+        <div class = "droph">
+            <button class="horizontal" id="current" onclick = "location.href = '../HTML/docHomePage.html';">Home</button>
+        </div>
+
+        <div class = "dropb">
+            <button class="horizontal" id="current" onclick = "location.href = 'appointmentHistoryDoc.html';">Appoinment History</button>
+        </div>
+
+        <div class = "drops">
+            <button class="horizontal"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <button class="vert" onclick = "location.href = '../HTML/updatedSettingsD.html';">Settings</button>
+                <button class="vert" onclick = "location.href = '../HTML/help.html';">Help</button>
+            </div>
+        </div>
+    
+    </div>
+
+    <img class="doc" src="../Images/doc.jpg" width="75">
+
+    <h2 id="DrNamehead"></h2>
+    <h2 style="font-size: 30px;">My Available Times</h2>
+
+    <form class="font" id = "myForm">
+        <label for = "doctorsAvailability">Please indicate the days you are available:</label><br>
+
+        <p>Start of Availibility</p>
+        <input type="date" id="startDate" ><br>
+        <p>End of Availibility</p>
+        <input type="date" id="endDate" ><br><br>
+
+
+        <label for = "doctorsTime">Please indicate hours you are available for:</label><br>
+
+        <p>Start of your Day</p>
+        <input type="time" id="StartTime"  min="07:00" max="17:00" required><br>
+        <p>End of your Day</p>
+        <input type="time" id="EndTime"  min="07:00" max="17:00" required><br><br>
+
+
+        <label for = "doctorsTime">Please indicate the time slots you'd like:</label><br>
+
+        <p>i.e. Would you like your day to be divided into hourly invervals or half hour intervals?</p>
+
+        <input type="radio" id="hour" name="invervals" value="Hour">
+        <label for="hour">Hourly Intervals</label><br>
+
+        <input type="radio" id="halfhour" name="invervals" value="Halfhour">
+        <label for="halfhour">Half Hour Intervals</label><br>
+        
+        
+
+    </form>
+
+    <button class="button" id="btnPost">Save</button>
+    <button class="button" onclick="myFunction()" value="Reset form">Clear</button>
+
+</body>
+<script>
+    var todayDate = new Date();
+    var month = todayDate.getMonth()+1;
+    var year = todayDate.getUTCFullYear() - 0; 
+    var tdate = todayDate.getDate(); 
+    if(month < 10){
+      month = "0" + month 
+    }
+    if(tdate < 10){
+      tdate = "0" + tdate;
+    }
+    var maxDate = year + "-" + month + "-" + tdate;
+    document.getElementById("startDate").setAttribute("min", maxDate);
+    document.getElementById("endDate").setAttribute("min", maxDate);
+   
+    console.log(maxDate);
+  </script>
+
+
+
+<script type="text/javascript">
+   
+  
+  
+</script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/DocTime.js"></script>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+
+    <!-- Cool Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <!-- Our stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../Styles/homepages.css" />
+
+    <link rel="shortcut icon" href="../Images/logo.jpeg">
+    <title>Appointment History Patient</title>
+
+</head>
+
+<body onload="pullBook()">
+    <div class="headerp">
+        <img class = "logo" src="../Images/logo.jpeg" width="50;">
+        <h1> Not Discovery </h1>
+        
+        <div class = "droph">
+            <button class="horizontal" id="current" onclick = "location.href = '../HTML/patHomePage.html';">Home</button>
+        </div>
+
+        <div class = "dropb">
+            <button class="horizontal" id="current" onclick = "location.href = '../HTML/patAppoint.html';">Book An Appoinment</button>
+        </div>
+
+        <div class = "dropt">
+            <button class="horizontal" id="current" onclick = "location.href = '';">Appointment History</button>
+        </div>
+
+        <div class = "drops">
+            <button class="horizontal"><i class="fa fa-bars"></i></button>
+            <div class="menu">
+                <button class="vert" onclick = "location.href = '../HTML/updatedSettingsP.html';">Settings</button>
+                <button class="vert" onclick = "location.href = '../HTML/help.html';">Help</button>
+            </div>
+        </div>
+    
+    </div>
+
+    <img class="doc" src="../Images/pat.jpg" width="175">
+    <h2 style="color: #0be9b9;">Appointment History</h2>
+
+    <!-- <div class="card2">
+        <br>
+        <label>Doctor's Name:</label>
+        <p id = "p1"></p>
+        <label>Appointment Date</label>
+        <p id = "d1"></p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+    </div>
+
+    <br>
+
+    <div class="card2">
+        <br>
+        <label>Doctor's Name:</label>
+        <p id = "p2"></p>
+        <label>Appointment Date</label>
+        <p id = "d2"></p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+    </div>
+
+    <br>
+
+    <div class="card2">
+        <br>
+        <label>Doctor's Name:</label>
+        <p id = "p3"></p>
+        <label>Appointment Date</label>
+        <p id = "d3"></p>
+        <p><a href="appointmentFormDisplay.html">View Appointment Form</a></p>
+    </div> -->
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+<script src="../js/appointPat.js"></script>
+
+</html>
