@@ -28,13 +28,16 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
     @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull Holder_Note_Appointment_History_Doctor holder, int position, @NonNull Note_Booking model) {
-        holder.tv_dateTime.setText(model.getDate() + " " + model.getTime());
+        String DateTime = model.getDate() + " " + model.getTime();
+        if (model.getMissed()){
+            holder.cv_card.setCardBackgroundColor(Color.GRAY);
+            holder.btn_view.setVisibility(View.GONE);
+            DateTime += " MISSED !";
+        }
+        holder.tv_dateTime.setText(DateTime);
         holder.tv_patientName.setText(model.getPatient_fullName());
         holder.tv_patientNumber.setText(model.getPatient_documentID());
-        if (model.getMissed()){
-            holder.ll_buttons.setVisibility(View.GONE);
-            holder.cv_card.setCardBackgroundColor(Color.GRAY);
-        }
+
     }
 
     @NonNull

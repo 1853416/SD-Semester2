@@ -8,6 +8,7 @@
     android:layout_marginTop="10dp"
     app:cardCornerRadius="10dp"
     tools:ignore="HardcodedText"
+    android:id="@+id/card"
     app:cardBackgroundColor="@color/greenDoctor">
 
     <RelativeLayout
