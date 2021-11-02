@@ -31,7 +31,7 @@ Activity_Doctor extends AppCompatActivity {
 
     //Fragment
     private Fragment_Doctor_Home fragment_doctor_home;
-    private Fragment_Doctor_Appointments fragment_doctor_appointments;
+    private Fragment_Doctor_Upcoming fragment_doctor_upcoming;
     private Fragment_Doctor_Availability fragment_doctor_availability;
     private Fragment_Doctor_History fragment_doctor_history;
     //Widgets
@@ -58,7 +58,7 @@ Activity_Doctor extends AppCompatActivity {
         //send data to Each fragment
         fragment_doctor_home = Fragment_Doctor_Home.newInstance(
                 userFName,userLName,userPhone,userEmail,userFields,userQualifications,userYears);
-        fragment_doctor_appointments = fragment_doctor_appointments.newInstance(userPhone);
+        fragment_doctor_upcoming = fragment_doctor_upcoming.newInstance(userPhone);
         fragment_doctor_availability = Fragment_Doctor_Availability.newInstance(userPhone);
 
         fragment_doctor_history = Fragment_Doctor_History.newInstance(userPhone);
@@ -67,9 +67,9 @@ Activity_Doctor extends AppCompatActivity {
 
         //Add Menu items to Bottom Navigation
         meowBottomNavigation.add(new MeowBottomNavigation.Model(1,R.drawable.ic_person));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_search));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_availability));
-        meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_booking));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(2,R.drawable.ic_availability));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(3,R.drawable.ic_booking));
+        meowBottomNavigation.add(new MeowBottomNavigation.Model(4,R.drawable.ic_time));
 
         //Accessing Menu items
         meowBottomNavigation.setOnShowListener(new MeowBottomNavigation.ShowListener() {
@@ -83,15 +83,17 @@ Activity_Doctor extends AppCompatActivity {
                     case 1://When id is 1 Doctor Home Page
                         loadFragment(fragment_doctor_home);
                         break;
-                    case 2://When id is 2 Doctor Search Page
+                    case 2://When id is 2 Doctor upcoming Page
 //                        loadFragment(fragment_doctor_search);
-                        loadFragment(fragment_doctor_appointments);
+                        loadFragment(fragment_doctor_upcoming);
                         break;
-                    case 3://When id is 3 Doctor Availability
+                    case 3: //when id is 3 Doctor History
+                        loadFragment(fragment_doctor_history);
+                        break;
+                    case 4://When id is 4 Doctor Availability
                         loadFragment(fragment_doctor_availability);
                         break;
-                    case 4: //when id is 4 Doctor History
-                    loadFragment(fragment_doctor_history);
+
 
                 }
             }

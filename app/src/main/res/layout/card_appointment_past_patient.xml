@@ -8,7 +8,7 @@
     android:layout_marginTop="10dp"
     app:cardCornerRadius="10dp"
     tools:ignore="HardcodedText"
-    app:cardBackgroundColor="@color/bluePatient">
+    app:cardBackgroundColor="@color/greenDoctor">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,41 +16,43 @@
         android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/TV_C_Appointment_AppDate"
+            android:id="@+id/TV_C_Appointment_dateTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="appointment date/time"
             android:textColor="@color/pureWhite"
             android:textSize="25sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textAlignment="center"/>
 
         <TextView
-            android:id="@+id/TV_C_Appointment_Name"
+            android:id="@+id/TV_C_Appointment_patient_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_AppDate"
+            android:layout_below="@id/TV_C_Appointment_dateTime"
             android:text="Name"
             android:textColor="@color/pureWhite"
+            android:textAlignment="center"
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/TV_C_Appointment_Number"
+            android:id="@+id/TV_C_Appointment_doctor_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_Name"
+            android:layout_below="@id/TV_C_Appointment_patient_fullName"
             android:text="Number"
-            android:textSize="18sp"
-            android:textColor="@color/pureWhite"/>
+            android:textColor="@color/pureWhite"
+            android:textAlignment="center"
+            android:textSize="18sp" />
 
         <Button
             android:id="@+id/B_C_Appointment_View"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_Number"
-            android:text="View Appointment Form"
+            android:layout_below="@id/TV_C_Appointment_doctor_number"
             android:layout_centerHorizontal="true"
-            >
-        </Button>
+            android:text="View Appointment Form"
+            android:backgroundTint="@color/bluePatient"/>
 
     </RelativeLayout>
 

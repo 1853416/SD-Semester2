@@ -32,6 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 
@@ -180,10 +181,12 @@ public class Fragment_Patient_Home extends Fragment {
     }
 
     private void getUpcomingBooking() {
-         collectionBookingReference
-                .whereEqualTo("patient_documentID",patient_phone)
-                .orderBy("date", Query.Direction.ASCENDING)
-                .orderBy("timeSlot", Query.Direction.ASCENDING)
+        Calendar calendar=Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY)+2);
+        Date currentDateTime = calendar.getTime();
+        collectionBookingReference
+                .whereEqualTo("patient_documentID", patient_phone)
+                .whereGreaterThan("timestamp",currentDateTime)
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
@@ -192,57 +195,24 @@ public class Fragment_Patient_Home extends Fragment {
                             ll_upComingNo.setVisibility(View.VISIBLE);
                             rl_upComing.setVisibility(View.GONE);
                         }else {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-//                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                try {
-                                    findUpcomingDocumnet(document);
-                                } catch (ParseException e) {
-                                    e.printStackTrace();
-                                }
-                            }
-
+                            setupUpomingCard(task.getResult().getDocuments().get(0));
                         }
 
                     }
                 });
     }
 
-    private void findUpcomingDocumnet(QueryDocumentSnapshot document) throws ParseException {
-        String document_date = (String) document.get("date");
-
-        SimpleDateFormat sdf = new SimpleDateFormat(dateFormatPatten);
-        Date documentDate = sdf.parse(document_date);
-        Date today = sdf.parse(date_today);
-
-        if (today.equals(documentDate) || today.before(documentDate)) {
-            if (up_coming_appointment == null){
-                up_coming_appointment = document;
-
-                setupUpomingCard(up_coming_appointment);
-            }else {
-                Date currDocumentDate =  sdf.parse( (String) up_coming_appointment.get("date"));
-                if (documentDate.before(currDocumentDate)){
-                    up_coming_appointment = document;
-
-                    setupUpomingCard(up_coming_appointment);
-                }
-            }
-        }else {
-
-        }
-    }
-
     @SuppressLint("SetTextI18n")
-    private void setupUpomingCard(QueryDocumentSnapshot document) {
+    private void setupUpomingCard(DocumentSnapshot document) {
         ll_upComingNo.setVisibility(View.GONE);
         rl_upComing.setVisibility(View.VISIBLE);
-        tv_upComingDateTime.setText(
-                (String) document.getData().get("date") + " "
-                        + getTime((String) document.getData().get("timeSlot")
-                        , (Boolean) document.getData().get("doctor_isHalfHourSlot")));
-        getDoctorName((String) document.getData().get("doctor_documentID"));
-        tv_upComingDoctorNumber.setText( "Doctor Number : " + (String) document.getData().get("doctor_documentID"));
-        tv_upComingDateOfAction.setText( "Appointment was booked on : " + (String) document.getData().get("dateOfAction"));
+        Note_Booking note_booking = new Note_Booking();
+        note_booking = document.toObject(Note_Booking.class);
+
+        tv_upComingDateTime.setText(note_booking.getDate() + " " + note_booking.getTime());
+        tv_upComingDoctor.setText("Dr." + note_booking.getDoctor_fullName());
+        tv_upComingDoctorNumber.setText("Tel: " + note_booking.getDoctor_documentID());
+        tv_upComingDateOfAction.setText("Booked on : " + note_booking.getDateOfAction());
     }
 
     private String getTime(String time,Boolean isHalfHourSlot) {
