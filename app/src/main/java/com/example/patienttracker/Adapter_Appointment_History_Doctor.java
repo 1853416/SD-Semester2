@@ -2,7 +2,6 @@ package com.example.patienttracker;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
@@ -11,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -19,16 +17,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.firebase.firestore.DocumentSnapshot;
 
-public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_History_Doctor.Holder_Note_Appointment>{
-
+public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_History_Doctor.Holder_Note_Appointment_History_Doctor>{
+    private  OnItemClickListener listener;
     public Adapter_Appointment_History_Doctor(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
         super(options);
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onBindViewHolder(@NonNull Adapter_Appointment_History_Doctor.Holder_Note_Appointment holder, int position, @NonNull Note_Booking model) {
+    protected void onBindViewHolder(@NonNull Holder_Note_Appointment_History_Doctor holder, int position, @NonNull Note_Booking model) {
         holder.tv_dateTime.setText(model.getDate() + " " + model.getTime());
         holder.tv_patientName.setText(model.getPatient_fullName());
         holder.tv_patientNumber.setText(model.getPatient_documentID());
@@ -40,18 +39,18 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
 
     @NonNull
     @Override
-    public Adapter_Appointment_History_Doctor.Holder_Note_Appointment onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Holder_Note_Appointment_History_Doctor onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.card_appointment_past_doctor,parent,false);
-        return new Adapter_Appointment_History_Doctor.Holder_Note_Appointment(view);
+        return new Holder_Note_Appointment_History_Doctor(view);
     }
 
     public void missAppointment(int position){
         getSnapshots().getSnapshot(position).getReference().update("missed",true);
     }
 
-    class Holder_Note_Appointment extends RecyclerView.ViewHolder{
+    class Holder_Note_Appointment_History_Doctor extends RecyclerView.ViewHolder{
         TextView tv_dateTime;
         TextView tv_patientName;
         TextView tv_patientNumber;
@@ -65,7 +64,7 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
         Button btn_miss_confirm;
         Button btn_miss_back;
 
-        public Holder_Note_Appointment(@NonNull View itemView) {
+        public Holder_Note_Appointment_History_Doctor(@NonNull View itemView) {
             super(itemView);
             tv_dateTime = itemView.findViewById(R.id.TV_C_Appointment_dateTime);
             tv_patientName = itemView.findViewById(R.id.TV_C_Appointment_patient_fullName);
@@ -87,9 +86,8 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
                 @Override
                 public void onClick(View v) {
                     int position = getBindingAdapterPosition();
-                    if (position != RecyclerView.NO_POSITION){
-                        String temp = getSnapshots().getSnapshot(position).getId();
-
+                    if (position != RecyclerView.NO_POSITION && listener != null){
+                        listener.onItemCLick(getSnapshots().getSnapshot(position),position);
                     }
                 }
             });
@@ -114,6 +112,13 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
                 }
             });
         }
+    }
+    public interface OnItemClickListener{
+        void onItemCLick(DocumentSnapshot documentSnapshot,int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.listener = listener;
     }
 
 }

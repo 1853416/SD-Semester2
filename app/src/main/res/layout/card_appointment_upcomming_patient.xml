@@ -29,7 +29,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TV_C_Appointment_patient_fullName"
+            android:id="@+id/TV_C_Appointment_doctor_fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/TV_C_Appointment_dateTime"
@@ -41,10 +41,10 @@
             android:textSize="22sp" />
 
         <TextView
-            android:id="@+id/TV_C_Appointment_patient_number"
+            android:id="@+id/TV_C_Appointment_doctor_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_patient_fullName"
+            android:layout_below="@id/TV_C_Appointment_doctor_fullName"
 
             android:textAlignment="center"
 
@@ -56,7 +56,7 @@
             android:id="@+id/B_C_Appointment_Cancel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/TV_C_Appointment_patient_number"
+            android:layout_below="@id/TV_C_Appointment_doctor_number"
             android:layout_marginHorizontal="50dp"
             android:backgroundTint="@color/pureRed"
             android:fontFamily="@font/consola"

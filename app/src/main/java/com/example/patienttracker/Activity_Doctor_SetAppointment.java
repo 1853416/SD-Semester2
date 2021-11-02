@@ -127,9 +127,9 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
                         assert note != null;
                         documentID_Doctor = note.getDoctor_documentID();
                         documentID_Patient = note.getPatient_documentID();
-                        tv_datetime.setText("Date & Time : " + note.getDate() + " " + note.getTime());
-                        tv_name_doctor.setText(note.getDoctor_fullName());
-                        tv_name_patient.setText(note.getPatient_fullName());
+                        tv_datetime.setText("Date & Time: " + note.getDate() + " " + note.getTime());
+                        tv_name_doctor.setText("Doctor: " + note.getDoctor_fullName());
+                        tv_name_patient.setText("Patient: " + note.getPatient_fullName());
                     }
                 });
     }

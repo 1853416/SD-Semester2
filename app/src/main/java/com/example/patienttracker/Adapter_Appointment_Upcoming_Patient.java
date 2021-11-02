@@ -16,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 
-public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_Upcoming_Patient.Holder_Note_Booking>{
+public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_Upcoming_Patient.Holder_Note_Booking_Upcoming_Patient>{
 
     public Adapter_Appointment_Upcoming_Patient(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
         super(options);
@@ -24,7 +24,7 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
 
     @SuppressLint("SetTextI18n")
     @Override
-    protected void onBindViewHolder(@NonNull Holder_Note_Booking holder, int position, @NonNull Note_Booking model) {
+    protected void onBindViewHolder(@NonNull Holder_Note_Booking_Upcoming_Patient holder, int position, @NonNull Note_Booking model) {
         holder.tv_DateTime.setText(model.getDate() + " " + model.getTime());
         holder.tv_DoctorName.setText("Dr." + model.getDoctor_fullName());
         holder.tv_DoctorNumber.setText(model.getDoctor_documentID());
@@ -33,11 +33,11 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
 
     @NonNull
     @Override
-    public Holder_Note_Booking onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public Holder_Note_Booking_Upcoming_Patient onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater
                 .from(parent.getContext())
                 .inflate(R.layout.card_appointment_upcomming_patient,parent,false);
-        return new Holder_Note_Booking(view);
+        return new Holder_Note_Booking_Upcoming_Patient(view);
     }
 
     public void deleteItem(int position)
@@ -45,7 +45,7 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
         getSnapshots().getSnapshot(position).getReference().delete();
     }
 
-    class Holder_Note_Booking extends RecyclerView.ViewHolder{
+    class Holder_Note_Booking_Upcoming_Patient extends RecyclerView.ViewHolder{
         TextView tv_DateTime;
         TextView tv_DoctorName;
         TextView tv_DoctorNumber;
@@ -56,10 +56,10 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
         Button btn_delete_confirm;
         Button btn_delete_back;
 
-        public Holder_Note_Booking(@NonNull View itemView) {
+        public Holder_Note_Booking_Upcoming_Patient(@NonNull View itemView) {
             super(itemView);
             tv_DateTime = itemView.findViewById(R.id.TV_C_Appointment_dateTime);
-            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_patient_fullName);
+            tv_DoctorName = itemView.findViewById(R.id.TV_C_Appointment_doctor_fullName);
             tv_DoctorNumber = itemView.findViewById(R.id.TV_C_Appointment_doctor_number);
             btn_cancel = itemView.findViewById(R.id.B_C_Appointment_Cancel);
 

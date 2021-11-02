@@ -54,9 +54,12 @@ public class Fragment_Patient_History extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_patient_history, container, false);
-        //for some reason firestore addes 2 hours so add 2 hours here to match the time
+//for some reason firestore addes 2 hours so add 2 hours here to match the time
+//        Calendar calendar=Calendar.getInstance();
+//        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY)+2);
+//        Date currentDateTime = calendar.getTime();
         Calendar calendar=Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY)+2);
+        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY));
         Date currentDateTime = calendar.getTime();
         query = collectionBookingReference
                 .whereEqualTo("patient_documentID", patient_phone)

@@ -32,34 +32,35 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/TV_A_Appointment_Title"
-            android:layout_marginStart="20dp"
+            android:paddingHorizontal="20dp"
 
             android:text="Doctor : "
             android:textColor="@color/pureWhite"
             android:textSize="20sp" />
 
         <TextView
-        android:id="@+id/TV_A_Appointment_Patient"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_A_Appointment_Doctor"
-        android:layout_marginStart="20dp"
+            android:id="@+id/TV_A_Appointment_Patient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TV_A_Appointment_Doctor"
 
-        android:text="Patient : "
-        android:textColor="@color/pureWhite"
-        android:textSize="20sp"/>
+            android:paddingHorizontal="20dp"
 
-    <TextView
-        android:id="@+id/TV_A_Appointment_DateTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_A_Appointment_Patient"
+            android:text="Patient : "
+            android:textColor="@color/pureWhite"
+            android:textSize="20sp" />
 
-        android:paddingHorizontal="20dp"
+        <TextView
+            android:id="@+id/TV_A_Appointment_DateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TV_A_Appointment_Patient"
 
-        android:text="Date  Time : "
-        android:textColor="@color/pureWhite"
-        android:textSize="20sp" />
+            android:paddingHorizontal="20dp"
+
+            android:text="Date  Time : "
+            android:textColor="@color/pureWhite"
+            android:textSize="20sp" />
 
     <TextView
         android:id="@+id/TV_A_Appointment_Description"
