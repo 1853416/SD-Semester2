@@ -1,0 +1,224 @@
+body{
+    background:rgb(250, 248, 248);
+    text-align: center;
+    margin: 0;
+    /*resize: both;
+    overflow: auto;*/
+    width: 100%;
+    height: 100%;
+}
+
+.headerd {
+    
+    height: 75px;
+    /*background: #1abc9c;*/
+    background:-webkit-linear-gradient(0deg, #00aeff, #3A86FF);
+    color: white;
+    font-size: 30px;
+}
+
+.headerp {
+
+    height: 75px;
+    /*background: #1abc9c;*/
+    background:-webkit-linear-gradient(0deg, #0be9b9, #07ebfb);
+    color: white;
+    font-size: 30px;
+}
+/*Images*/
+.logo{
+    position: relative;
+    top: 10px;
+    left: -47%;
+}
+
+.doc{
+    position: relative;
+    top: 25px;
+}
+
+/*Headings*/
+h1{
+    position: relative;
+    top: -70px;
+    font-size: 110%;
+    font-family: Bowlby One SC;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    margin-left: 7.5%;
+    text-align: left;
+}
+
+h2{
+    position: relative;
+    top: 30px;
+    font-size: 30px;
+    color: #00aeff;
+}
+
+h3{
+    position: relative;
+    top: 25px;
+}
+
+h4{
+    position: relative;
+    top: -10px;
+    font-size: 17.5px;
+}
+
+.p1{
+    position: relative;
+    top: 25px;
+}
+
+.p2{
+    position: relative;
+    top: 15px;
+}
+
+.p3{
+    position: relative;
+    top: -10px;
+}
+
+.p4{
+    position: relative;
+    top: -10px;
+}
+
+.card {
+    position: relative;
+    top: 50px;
+    margin: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height: 400px;
+    margin-left: 40%;
+    background-color: rgb(199, 197, 197);
+  }
+
+.card2 {
+    position: relative;
+    top: 50px;
+    margin: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 20%;
+    height: 10%;/*225px*/
+    margin-left: 40%;
+    padding: 0.25%;
+    background-color: rgb(199, 197, 197);
+  }
+
+
+
+.droph {
+	height:75px;
+  	position: relative;
+    top: -155px;
+    left: 250px;
+    display: inline-block;
+}
+
+.dropb {
+	height:75px;
+  	position: relative;
+    top: -155px;
+    left: 350px;
+    display: inline-block;
+}
+
+.dropt {
+	height:75px;
+  	position: relative;
+    top: -155px;
+    left: 450px;
+    display: inline-block;
+
+}
+
+.drops {
+	height:75px;
+  	position: relative;
+    top: -155px;
+    left: 550px;
+    display: inline-block;
+    
+}
+
+.horizontal{
+	height: 100%;
+	background: inherit;
+	border: none;
+    width: inherit;
+	transition-duration: 0.4s;
+	font-family: "Montserrat";
+	font-size: 25px;
+    text-shadow: 1px 1px 1px #001433;
+    color: white;
+    display: inline-block;
+    position: relative;
+}
+
+.horizontal:hover {
+	background-color: rgb(250, 248, 248);
+    color: grey;
+    text-shadow: 0px 0px 0px #001433;
+    height: 75px;
+}
+
+.vert{
+	display: block;
+	height: 100%;
+	padding: 20px;
+	border: none;
+	text-decoration: none;
+	width:100%;
+	height: 25%;
+	color: black;
+	background: rgb(250, 248, 248);
+
+}
+
+.vert:hover {
+	background-color: rgb(199, 198, 198); /* Green */
+  	color: white;
+}
+
+.menu {
+    width: 200px;
+    display:none;
+    position: absolute;	
+    left: -100px;
+    background-color: #efefef;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    
+}
+
+.drops:hover .menu {
+    display: block;
+}
+
+.button{
+    top: 50px;
+    background-color: inherit;
+    color: white;
+    font-size: 10px;
+    margin: 5px;
+    letter-spacing: 1.5px;
+    border:none;
+    border: 1px solid white;
+    border-radius: 3px; 
+    width: 125px;
+    height: 35px;
+    font-size: 10px;
+}
+
+.button:hover{
+    background-color: white;
+  	color: grey;
+}

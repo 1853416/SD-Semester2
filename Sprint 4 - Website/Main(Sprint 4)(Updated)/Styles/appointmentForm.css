@@ -1,0 +1,125 @@
+body{
+    background-color: rgb(250, 248, 248);  
+    text-align: center;
+    font-family: "Sofia";
+    font-size: 22px;
+    margin: 5px;
+}
+
+h1{
+    text-align: center;
+    font-family: "Sofia";
+    font-size: 30px;
+    color: #10a5fc;
+}
+
+.pn{
+  position: relative;
+  left: 0px;
+
+}
+p{
+  font-size: 25px;
+  left: 50px;
+}
+
+.dov{
+  position: relative; 
+  top: 20px;
+  left: 5px;
+
+}
+
+.napp{
+  position: relative; 
+  top: 40px;
+}
+
+.mpres{
+  position: relative; 
+  top: 40px;
+}
+
+.rel{
+  position: relative; 
+  top: 50px;
+  left: 0px;
+
+}
+.save {
+    position: relative; 
+    top: 75px;
+    left: 0px;
+    width: 100px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    font-size: medium;
+    border: 1px solid black;  
+    border-radius: 2px;
+    font-family: "Sofia";
+  }
+
+  .cancel {
+    position: relative; 
+    top: 75px;
+    left: 5px;
+    width: 100px;
+    height: 35px;
+    background-color: white;
+    color: black;
+    font-size: medium;
+    border: 1px solid black;  
+    border-radius: 2px;
+    font-family: "Sofia";
+  }
+
+  .font{
+    padding: 5px; 
+    margin: 25px;
+    font-size: 20px;
+  }
+
+  input{
+    display: inline-block;
+    width:350px; 
+    height:30px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+
+  .font2{
+    position: relative;
+    text-align: left;
+    left: 150px;
+    padding: 5px; 
+    margin: 22px;
+    font-size: 20px;
+    color: black;
+  }
+
+  .font3{
+    display: inline-block;
+    font-size: 25px;
+    width: 25%;
+    color: black;
+  }
+
+.button1{
+  position: relative;
+  width: 140px;
+  height: 40px;
+  background-color: inherit;
+  color: gray;
+  font-size: 20px;
+  margin: 10px;
+  letter-spacing: 1.5px;
+  border: 2px solid gray;
+  border-radius: 100px; 
+}
+
+.button1:hover{
+  background-color: rgb(199, 198, 198);
+  border: rgb(199, 198, 198);
+  color: white;
+}
