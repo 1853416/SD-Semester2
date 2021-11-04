@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +18,28 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter<Note_Booking, Adapter_Appointment_History_Doctor.Holder_Note_Appointment_History_Doctor>{
     private  OnItemClickListener listener;
+    String patientname, doctorname,sDate;
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private CollectionReference collectionPatientReference = db.collection("Patient");
     public Adapter_Appointment_History_Doctor(@NonNull FirestoreRecyclerOptions<Note_Booking> options) {
         super(options);
     }
@@ -37,6 +56,9 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
         holder.tv_dateTime.setText(DateTime);
         holder.tv_patientName.setText(model.getPatient_fullName());
         holder.tv_patientNumber.setText(model.getPatient_documentID());
+        patientname = model.getPatient_fullName();
+        doctorname = model.getDoctor_fullName();
+        sDate = model.getDate() + " " + model.getTime();
 
     }
 
@@ -104,6 +126,21 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
                         public void onClick(View v) {
                             missAppointment(getLayoutPosition());
                             dialog_miss.dismiss();
+                            collectionPatientReference.document((String) tv_patientNumber.getText())
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                                        @Override
+                                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                                            String pEmail = (String) documentSnapshot.get("Email");
+                                            new EmailTask(pEmail).execute();
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+
+                                        }
+                                    });
                         }
                     });
                     btn_miss_back.setOnClickListener(new View.OnClickListener() {
@@ -122,6 +159,51 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
 
     public void setOnItemClickListener(OnItemClickListener listener){
         this.listener = listener;
+    }
+
+    private class EmailTask extends AsyncTask<Void,Void,Void> {
+        String patientEmail;
+        private EmailTask(String pEmail){
+            patientEmail = pEmail;
+        }
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            final String Username = "notdiscoveryemails2@gmail.com";
+            final String Password = "SDgroup12";
+            String MessagetoSend = "Good Day,"
+                    +patientname+"\n"
+                    +"This is too inform you that you have missed you appointment with Dr. "+doctorname+", that was at:"+ sDate
+                    +"\n" + " Please reschedule another appointment with you doctor";
+            Properties props = new Properties();
+            props.put("mail.smtp.auth","true");
+            props.put("mail.smtp.starttls.enable","true");
+            props.put("mail.smtp.host","smtp.gmail.com");
+            props.put("mail.smtp.port","587");
+
+            Session session = Session.getInstance(props,
+                    new Authenticator(){
+                        @Override
+                        protected PasswordAuthentication getPasswordAuthentication(){
+                            return new PasswordAuthentication(Username,Password);
+                        }
+                    });
+
+            try{
+                Message message = new MimeMessage(session);
+                message.setFrom(new InternetAddress(Username));
+                //Log.d(TAG, "Patient Email in email task"+ patient_document_email);
+                String SendList = patientEmail;
+                message.setRecipients(Message.RecipientType.TO,InternetAddress.parse(SendList) );
+                message.setSubject("Not Discovery Missed Appointment");
+                message.setText(MessagetoSend);
+                Transport.send(message);
+            }catch(MessagingException e){
+                throw new RuntimeException(e);
+            }
+
+            return null;
+        }
     }
 
 }

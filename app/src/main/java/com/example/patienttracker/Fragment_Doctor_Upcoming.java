@@ -1,5 +1,6 @@
 package com.example.patienttracker;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -19,6 +20,16 @@ import com.google.firebase.firestore.Query;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 
 public class Fragment_Doctor_Upcoming extends Fragment {
@@ -100,4 +111,6 @@ public class Fragment_Doctor_Upcoming extends Fragment {
         super.onStop();
         adapter.stopListening();
     }
+
+
 }
