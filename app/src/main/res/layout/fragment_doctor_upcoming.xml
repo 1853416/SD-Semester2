@@ -21,7 +21,8 @@
             android:textAlignment="center"
             android:textColor="@color/pureWhite"
             android:textSize="35sp"
-            android:fontFamily="@font/keania_one_regular"/>
+            android:fontFamily="@font/keania_one_regular"
+            android:backgroundTint="@color/pureWhite"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_F_Doctor_Upcoming"

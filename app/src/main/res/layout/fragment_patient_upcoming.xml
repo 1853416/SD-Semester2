@@ -12,16 +12,17 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <EditText
             android:id="@+id/TITLE"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
+            android:fontFamily="@font/keania_one_regular"
             android:text="Upcoming Appointment"
             android:textAlignment="center"
             android:textColor="@color/pureWhite"
             android:textSize="35sp"
-            android:fontFamily="@font/keania_one_regular"/>
+            android:backgroundTint="@color/pureWhite"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/RV_F_Patient_Upcoming"

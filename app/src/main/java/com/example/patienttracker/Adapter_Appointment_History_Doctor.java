@@ -50,7 +50,7 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
         String DateTime = model.getDate() + " " + model.getTime();
         if (model.getMissed()){
             holder.cv_card.setCardBackgroundColor(Color.GRAY);
-            holder.btn_view.setVisibility(View.GONE);
+            holder.ll_buttons.setVisibility(View.GONE);
             DateTime += " MISSED !";
         }
         holder.tv_dateTime.setText(DateTime);
