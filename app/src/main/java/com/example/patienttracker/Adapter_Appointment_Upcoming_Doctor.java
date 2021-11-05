@@ -155,7 +155,7 @@ public class Adapter_Appointment_Upcoming_Doctor extends FirestoreRecyclerAdapte
             String MessagetoSend = "Good Day,"
                     +patientname+"\n"
                     +"This is too inform you that your appointment with  Dr." + doctorname+" on "+ sDate+ " has been cancelled"
-                    +"\n" + " Please reschedule another appointment with you doctor \n" +"Thank you for using NotDiscovery!";
+                    +"\n" + " Please reschedule another appointment with you doctor \n \n" +"Thank you for using NotDiscovery!";
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
