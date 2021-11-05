@@ -10,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar0">
+        android:theme="@style/AppTheme.NoActionBar">
+
         <activity
             android:name=".Activity_Main"
             android:exported="true">
@@ -22,13 +23,13 @@
         </activity> <!-- Doctor -->
         <activity
             android:name=".Activity_Doctor_Login"
-            android:theme="@style/AppTheme.NoActionBar1" />
+            android:theme="@style/AppTheme.NoActionBarLogin" />
         <activity
-            android:name=".Activity_Doctor_Forgot"
-            android:theme="@style/AppTheme.NoActionBar1" />
+            android:name=".Activity_Doctor_Forgot_Password"
+            android:theme="@style/AppTheme.NoActionBarLogin" />
         <activity
             android:name=".Activity_Doctor_Register"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Doctor"
             android:theme="@style/AppTheme.NoActionBarDoctor" />
@@ -54,45 +55,43 @@
             android:name=".Activity_Doctor_Change_Password"
             android:theme="@style/AppTheme.NoActionBarDoctor" />
 
-
-
         <!-- Patient -->
         <activity
             android:name=".Activity_Patient_Login"
-            android:theme="@style/AppTheme.NoActionBar1" />
+            android:theme="@style/AppTheme.NoActionBarLogin" />
         <activity
-            android:name=".Activity_Patient_Forgot"
-            android:theme="@style/AppTheme.NoActionBar1" />
+            android:name=".Activity_Patient_Forgot_Password"
+            android:theme="@style/AppTheme.NoActionBarLogin" />
         <activity
             android:name=".Activity_Patient_Register"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Booking_Select_Doctor"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Booking_Select_Time"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_ViewAppointment"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Settings"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Help"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Policy"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Update_Info"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
             android:name=".Activity_Patient_Change_Password"
-            android:theme="@style/AppTheme.NoActionBar2" />
+            android:theme="@style/AppTheme.NoActionBarPatient" />
     </application>
 
 </manifest>

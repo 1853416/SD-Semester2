@@ -7,21 +7,21 @@
         <item name="colorAccent">@color/bluePatient</item>
     </style>
 
-    <style name="AppTheme.NoActionBar0">
+    <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Status bar -->
         <item name="colorPrimaryDark">@color/greenDoctor2</item>
     </style>
 
-    <style name="AppTheme.NoActionBar1">
+    <style name="AppTheme.NoActionBarLogin">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Status bar -->
         <item name="colorPrimaryDark">@color/greenDoctor</item>
     </style>
 
-    <style name="AppTheme.NoActionBar2">
+    <style name="AppTheme.NoActionBarPatient">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <!-- Status bar -->
