@@ -150,8 +150,8 @@ public class Adapter_Appointment_Upcoming_Patient extends FirestoreRecyclerAdapt
             final String Password = "SDgroup12";
             String MessagetoSend = "Good Day, Dr."
                     +doctorname+"\n"
-                    +"This is too inform you that your appointment with  Dr." + patientname+" on "+ sDate+ " has been cancelled"
-                    +"\n" + " Please reschedule another appointment with you doctor";
+                    +"This is too inform you that your appointment with " + patientname+" on "+ sDate+ " has been cancelled"
+                    +"\n" + "They will have to reschedule another appointment  \n \n" +"Thank you for using NotDiscovery!";
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
