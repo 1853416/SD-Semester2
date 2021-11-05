@@ -143,6 +143,7 @@ public class Activity_Doctor_Update_Info extends AppCompatActivity {
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         note_doctor = documentSnapshot.toObject(Note_Doctor.class);
                         doctorData = documentSnapshot.getData();
+
                         userEmail = note_doctor.getEmail();
                         userFName = note_doctor.getFirstName();
                         userLName = note_doctor.getLastName();
