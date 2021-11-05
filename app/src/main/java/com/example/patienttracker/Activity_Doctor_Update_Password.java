@@ -25,8 +25,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.io.Serializable;
 import java.util.Map;
 
-public class Activity_Doctor_Change_Password extends AppCompatActivity {
+public class Activity_Doctor_Update_Password extends AppCompatActivity {
     //variables
+    private static final String phoneKey            = "phonenumber";
     private Note_Doctor note_doctor;
     private String entered_password, doctor_documentID;;
 
@@ -42,17 +43,16 @@ public class Activity_Doctor_Change_Password extends AppCompatActivity {
 
     //database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionBookingReference = db.collection("Booking");
     private CollectionReference collectionDoctorReference = db.collection("Doctor");
-    private CollectionReference collectionPatientReference = db.collection("Patient");
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_change_password);
+        setContentView(R.layout.activity_doctor_update_password);
 
-        final Intent intent = getIntent();
-        doctor_documentID = intent.getStringExtra(Activity_Doctor_Login.doctorPhoneKEY);
+        Intent intent = getIntent();
+        doctor_documentID = intent.getStringExtra(phoneKey);
 
         il_password = findViewById(R.id.IL_A_DoctorChange_Password);
         et_password = findViewById(R.id.ET_A_DoctorChange_Password);

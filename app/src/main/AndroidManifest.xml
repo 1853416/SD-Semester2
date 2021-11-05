@@ -54,7 +54,9 @@
         <activity
             android:name=".Activity_Doctor_Change_Password"
             android:theme="@style/AppTheme.NoActionBarDoctor" />
-
+        <activity
+            android:name=".Activity_Doctor_Update_Password"
+            android:theme="@style/AppTheme.NoActionBarDoctor" />
         <!-- Patient -->
         <activity
             android:name=".Activity_Patient_Login"
