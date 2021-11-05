@@ -128,7 +128,7 @@ btnSave.addEventListener('click', e => {
       
     })
     .then(()=>{
-      Toast.show('Datasaved succesfully !! ','success')
+      Toast.show('Email sent to client ,data saved succesfully ,you will be redirected shortly!! ','success')
       console.log('Data has been saved successfully !')})
       sendEmail()
     .catch(error => {
@@ -150,7 +150,7 @@ function sendEmail() {
   Body : "Good Day" +appointData2['FirstName']+ ","+"<br>" +  "<br>" +  "<br>" +  "Your script with "+appointData2['FirstName'] + " at " + appointData['time'] +" on " + appointData['dateOfVisit'] +"." + "<br>" + "<br>" +  "<br>" +script.value ,
   
   }).then(
-    Toast.show('Email sent succesfully !! ','success')
+    //Toast.show('Email sent succesfully !! ','success')
   );
   var delayInMilliseconds = 4500; //1 second
   setTimeout(function() {

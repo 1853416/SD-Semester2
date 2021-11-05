@@ -15,7 +15,7 @@ const auth = firebase.auth();
 const database = firebase.firestore();
 var doctorData= {};
 var PatientData= {};
-var x
+var x;
 
 const Toast={
   init(){
@@ -46,6 +46,7 @@ async function pullBook(){
 
 //localStorage.setItem('docName', "0000000000");
 var docPhone = localStorage.getItem('Phone');
+console.log(localStorage.getItem('Phone'));
 
 const db = await database.collection('Bookings').where("doctor_documentID", "==", localStorage.getItem('Phone'));
 db.get().then((querySnapshot) => {
@@ -56,6 +57,9 @@ db.get().then((querySnapshot) => {
           // doc.data() is never undefined for query doc snapshots
           //console.log("Dr" ,doc.data());
      x = doc.data();
+     var date=x['dateOfVisit'];
+     var time=x['time'];
+     
     PatientData = doc.data();    
     var cards = document.createElement("div");
     const currentDiv = document.getElementById("div1");
@@ -80,11 +84,12 @@ db.get().then((querySnapshot) => {
                 
                 var dat = document.createElement("p");
                 dat.setAttribute("class", "p1")
-                dat.innerHTML = x['dateOfVisit'];
+                dat.innerHTML = date;
+                console.log(date);
                 cards.appendChild(dat);
                 var tim = document.createElement("p");
                 tim.setAttribute("class", "p2")
-                tim.innerHTML = x['time'];
+                tim.innerHTML = time;
                 cards.appendChild(tim);
                 var viewapp = document.createElement("BUTTON");
                 viewapp.innerHTML = "View Appointment Form";
@@ -118,12 +123,12 @@ db.get().then((querySnapshot) => {
                 
                 var dat = document.createElement("p");
                 dat.setAttribute("class", "p1")
-                dat.innerHTML = x['dateOfVisit'];
+                dat.innerHTML = date;
                 dat.style.textDecoration = 'line-through';
                 cards.appendChild(dat);
                 var tim = document.createElement("p");
                 tim.setAttribute("class", "p2")
-                tim.innerHTML = x['time'];
+                tim.innerHTML = time;
                 tim.style.textDecoration = 'line-through';
                 cards.appendChild(tim);
                 cards.appendChild(brk);
@@ -144,12 +149,12 @@ db.get().then((querySnapshot) => {
                 
                 var dat = document.createElement("p");
                 dat.setAttribute("class", "p1")
-                dat.innerHTML = x['dateOfVisit'];
+                dat.innerHTML = date;
                 dat.style.textDecoration = 'line-through';
                 cards.appendChild(dat);
                 var tim = document.createElement("p");
                 tim.setAttribute("class", "p2")
-                tim.innerHTML = x['time'];
+                tim.innerHTML = time;
                 tim.style.textDecoration = 'line-through';
                 cards.appendChild(tim);
                 cards.appendChild(brk);
@@ -201,7 +206,7 @@ function Form($this)
   var formid =$this.id;
   localStorage.setItem("FileNew", formid);
   
-  window.location.replace("../html/appointmentFormDisplay.html");
+  window.location.replace("../html/appointmentFormDisplayDoc.html");
 }
 
 function Missed($this)
@@ -227,7 +232,7 @@ function sendEmail() {
   To :PatientData['Email'],
   From : "notdiscovery1@gmail.com",
   Subject : "Appointment Confirmation",
-  Body : "Good Day " +PatientData['FirstName']+ "," + "<br>" +  "<br>" +  "<br>" +  "You have missed your appointment with Dr."+doctorData['LastName'] + " on "+x['dateOfVisit']+"." + "<br>" + "<br>" +  "<br>" + "Please reshedule your appointment as soon as possible."  + "<br>" + "<br>"+ "Please bring all of your medication."  + "<br>" +"<br>" + "Thank You for using NotDiscovery!", 
+  Body : "Good Day " +PatientData['FirstName']+ "," + "<br>" +  "<br>" +  "<br>" +  "You have missed your appointment with Dr."+doctorData['LastName'] + " on "+date+"." + "<br>" + "<br>" +  "<br>" + "Please reshedule your appointment as soon as possible."  + "<br>" + "<br>"+ "Please bring all of your medication."  + "<br>" +"<br>" + "Thank You for using NotDiscovery!", 
   }).then(
   Toast.show('Email sent succesfully !! ','success')
   );

@@ -86,7 +86,7 @@ if (isPhoneCorrect==true && isEmailCorrect==true &&isPasswordCorrect==true &&isF
     .then(()=>{
 
       //alert('User Created!!')
-       Toast.show('User Created!! ','success')
+       Toast.show('User Created!!,You will be redirected shortly ','success')
       var delayInMilliseconds = 4500; //1 second
 
 setTimeout(function() {

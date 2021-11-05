@@ -94,7 +94,7 @@ btnEnter.addEventListener('click', e => {
     Body : "Good Day " +Patientdata['FirstName']+ ","+"<br>" +  "<br>" +  "<br>" +  "Your password reset code is: "+"<br>"+Code
     
     }).then(
-      Toast.show('Email sent succesfully !! ','success')
+      Toast.show('Please check your email for reset code !! ','success')
     );
     var delayInMilliseconds = 4500; //1 second
     setTimeout(function() {

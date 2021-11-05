@@ -92,7 +92,7 @@ btnPost.addEventListener('click', e => {
       })
       .then(()=>{
         //alert('Info saved!!')
-        Toast.show('Data has been saved successfully !','success')
+        Toast.show('Data has been saved successfully ,You will be redirected shortly!','success')
         console.log('Data has been saved successfully !')})
       .catch(error => {
         console.error(error)

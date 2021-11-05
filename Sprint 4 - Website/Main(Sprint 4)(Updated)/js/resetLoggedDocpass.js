@@ -11,10 +11,13 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.firestore();
 var Doctordata= {};
+const oldPassword=document.getElementById('oldpassword');
 const btnReset = document.getElementById('btnReset');
 const password1=document.getElementById('password1');
 const password2=document.getElementById('password2');
 const usersCollection = database.collection('Doctor');
+var oldPass;
+
 
 
 const Toast={
@@ -61,13 +64,15 @@ const phoneCheck = database.collection('Doctor').doc(phone);
       phoneCheck.onSnapshot((doc) => {       
     Doctordata=docSnapshot.data();
         console.log(Doctordata['LastName']);
-       });
-    } else {
-      Toast.show('Not found!! ','error')// create the document
-    }
-  });
+        console.log(Doctordata['Password']);
+        oldPass=Doctordata['Password'];
+        console.log(oldPassword)
+  if(oldPassword.value !=Doctordata['Password']){
+    Toast.show('Your old password does not match to whats on record !','error')
 
-  if(password1.value!=password2.value){
+  }
+
+  else if(password1.value!=password2.value){
       Toast.show('Your new passwords do not match !','error')
 
   }else{
@@ -79,7 +84,7 @@ const phoneCheck = database.collection('Doctor').doc(phone);
       Toast.show('New Password has been updated successfully !','success')
       var delayInMilliseconds = 4100; //1 second
       setTimeout(function() {
-          window.location.replace("../HTML/docLogin.html");
+          window.location.replace("../HTML/updatedSettingsD.html");
         }, delayInMilliseconds);
       console.log('Data has been saved successfully !')})
     .catch(error => {
@@ -87,6 +92,13 @@ const phoneCheck = database.collection('Doctor').doc(phone);
       console.error(error)
     }); 
   }
+       });
+    } else {
+      Toast.show('Not found!! ','error')// create the document
+    }
+  });
+  ;
+  
   
  
   

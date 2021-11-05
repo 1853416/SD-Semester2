@@ -76,7 +76,7 @@ btnReset.addEventListener('click', e => {
       })
       .then(()=>{
         //alert('Info saved!!')
-        Toast.show('New Password has been updated successfully !','success')
+        Toast.show('New Password has been updated successfully ,you will be redirected shortly!!','success')
         var delayInMilliseconds = 4100; //1 second
         setTimeout(function() {
             window.location.replace("../HTML/patLogin.html");

@@ -16,6 +16,7 @@ var firebaseConfig = {
     const dateOfVisit = "test";
     const appNotes = "test";
     const script = "test";
+	
     // const dprel = "test";
     const btnSave = document.getElementById('btnSave');
 	var Docdata= {};
@@ -56,13 +57,14 @@ async function pullDoc(){
     		querySnapshot.forEach((doc) => {
         		
 			var x = doc.data();
+			 Docdata=doc.data();
 			
-			console.log(Docdata['Email']);
+			console.log(Docdata['LastName']);
 
 			var grp = document.getElementById("drNames");
 			
 			var nws = document.createElement('option');
-			nws.setAttribute('value', x['Email']);
+			nws.setAttribute('value', x['Phone']);
 			nws.innerHTML = x['LastName'];
 			grp.appendChild(nws);
     		});
@@ -74,7 +76,12 @@ async function pullDoc(){
 
 async function pullTim(){	
 
-	const time = await database.collection('Doctor').where("Email", "==", localStorage.getItem('docName'));
+	console.log(localStorage.getItem('docName'));
+
+
+
+
+	const time = await database.collection('Doctor').where("Phone", "==", localStorage.getItem('docName'));
 	time.get().then((querySnapshot) => {
     		querySnapshot.forEach((doc) => {
         		// doc.data() is never undefined for query doc snapshots
@@ -125,11 +132,13 @@ function fldSel()
 
 		var nws = document.createElement('option');
 		nws.setAttribute('value', "Blank");
+		
 		nws.innerHTML = "Select";
 		nam.appendChild(nws);
 		
 		var fld = document.getElementById("field");
 		temp = fld.options[fld.selectedIndex].value;
+		console.log(temp);
 		localStorage.setItem('special', temp);
 		//document.getElementById("w").innerHTML = temp;
 }
@@ -140,8 +149,11 @@ function docSel()
 		var nam = document.getElementById("times");
 		nam.options.length = 0;
 		
+		
 		var fld = document.getElementById("drNames");
+		console.log(document.getElementById("drNames"));
 		temp = fld.options[fld.selectedIndex].value;
+		//console.log(temp);
 		localStorage.setItem('docName', temp);
 		//document.getElementById("w").innerHTML = temp;
 }
@@ -156,7 +168,7 @@ function book()
 	var slot = document.getElementById("times");
 	var z = slot.options[slot.selectedIndex].value;
 
-	document.getElementById("w").innerHTML = date;
+	//document.getElementById("w").innerHTML = date;
 
 	const usersCollection = database.collection('Bookings');
 	const ID = usersCollection.add({
@@ -169,7 +181,7 @@ function book()
 
 
   }).then(()=>{
-    Toast.show('Booking made Succesfully!! ','success');
+    Toast.show('Booking made Succesfully!!,you will be redirected shortly','success');
 
 	var delayInMilliseconds = 4500; //1 second
 

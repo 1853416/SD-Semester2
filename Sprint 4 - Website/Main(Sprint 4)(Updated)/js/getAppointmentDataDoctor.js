@@ -39,7 +39,7 @@ const Toast={
   }
 };
 back.addEventListener('click', e => {
-  window.location.replace("../html/appointmentHistoryPat.html");
+  window.location.replace("../html/appointmentHistoryDoc.html");
 
 
 });
