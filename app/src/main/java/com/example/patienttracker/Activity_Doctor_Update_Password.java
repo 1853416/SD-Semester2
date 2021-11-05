@@ -145,7 +145,7 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backToDoctorPage();
+                backToDoctorLogin();
             }
         });
     }
@@ -157,6 +157,12 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
         //passing values to user activity
         intent.putExtra(Activity_Doctor_Login.doctorDataKEY, (Serializable) doctorData);
         intent.putExtra(Activity_Doctor_Login.doctorPhoneKEY,doctor_documentID);
+        startActivity(intent);
+    }
+
+    private void backToDoctorLogin() {
+        Intent intent = new Intent(this, Activity_Doctor_Login.class);
+        //passing values to user activity
         startActivity(intent);
     }
 

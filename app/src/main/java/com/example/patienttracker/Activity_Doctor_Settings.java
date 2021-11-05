@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.io.Serializable;
 
@@ -39,9 +40,10 @@ public class Activity_Doctor_Settings extends AppCompatActivity {
         });
 
         btn_update.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Activity_Doctor_Update_Info.class);
-            intent.putExtra(phoneKey,doctor_documentID);
-            startActivity(intent);
+//            Intent intent = new Intent(this, Activity_Doctor_Update_Info.class);
+//            intent.putExtra(phoneKey,doctor_documentID);
+//            startActivity(intent);
+            Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show();
         });
 
         btn_password.setOnClickListener(v -> {
