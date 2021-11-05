@@ -666,7 +666,7 @@ public class Activity_Patient_Booking_Select_Time extends AppCompatActivity {
                             +patient_document_lastName+"\n \n"
                             +"Your appointment with Dr."
                             +doctor_fullName + "is at "
-                            +selectedDate +"\n"
+                            +selectedDate +"\n \n"
                             +"Please come 10 minutes before your appointment starts \n"+
                             "Thank you for using NotDiscovery!";
                     Properties props = new Properties();
