@@ -25,12 +25,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.io.Serializable;
 import java.util.Map;
 
-public class Activity_Doctor_Update_Password extends AppCompatActivity {
+public class Activity_Patient_Update_Password extends AppCompatActivity {
     //variables
-    private static final String phoneKey            = "phonenumber";
-    private String entered_password, doctor_documentID;;
-
-    private Map<String, Object> doctorData ;
+    private String entered_password, patient_documentID;;
+    private Map<String, Object> data ;
 
     //widgets
     private TextInputLayout il_password;
@@ -42,31 +40,27 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
 
     //database
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private CollectionReference collectionDoctorReference = db.collection("Doctor");
-
-
+    private CollectionReference collectionPatientReference = db.collection("Patient");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doctor_update_password);
+        setContentView(R.layout.activity_patient_update_password);
 
         Intent intent = getIntent();
-        doctor_documentID = intent.getStringExtra(phoneKey);
+        patient_documentID = intent.getStringExtra(Fragment_Patient_Home.phoneKey);
 
-        il_password = findViewById(R.id.IL_A_DoctorChange_Password);
-        et_password = findViewById(R.id.ET_A_DoctorChange_Password);
+        il_password = findViewById(R.id.IL_A_PatientChange_Password);
+        et_password = findViewById(R.id.ET_A_PatientChange_Password);
 
         et_password.addTextChangedListener(passwordTextWatcher);
 
-        btn_confirm = findViewById(R.id.B_A_DoctorChange_Confirm);
-        btn_back = findViewById(R.id.B_A_DoctorChange_Back);
+        btn_confirm = findViewById(R.id.B_A_PatientChange_Confirm);
+        btn_back = findViewById(R.id.B_A_PatientChange_Back);
 
         dialog_successful = new Dialog(this);
         dialog_successful.setContentView(R.layout.dialog_successful_update);
         dialog_successful.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         btn_continue = dialog_successful.findViewById(R.id.B_D_Success_Continue);
-
-        getDoctorData();
     }
 
     @Override
@@ -77,8 +71,7 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
             if (entered_password != null)
             {
                 updatePassword();
-            }else
-            {
+            }else {
                 il_password.setError("empty");
                 btn_confirm.setEnabled(false);
             }
@@ -86,7 +79,7 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
 
         btn_back.setOnClickListener(v ->
         {
-            backToDoctorPage();
+            backToPatientPage();
         });
     }
 
@@ -108,8 +101,8 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
 
     private void updatePassword()
     {
-        collectionDoctorReference
-                .document(doctor_documentID)
+        collectionPatientReference
+                .document(patient_documentID)
                 .update("Password",entered_password)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
@@ -125,15 +118,15 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
                 });
     }
 
-    private void getDoctorData() {
-        collectionDoctorReference
-                .document(doctor_documentID)
+    private void getPatientData() {
+        collectionPatientReference
+                .document(patient_documentID)
                 .get()
                 .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @SuppressLint("SetTextI18n")
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
-                        doctorData = documentSnapshot.getData();
+                        data = documentSnapshot.getData();
                     }
                 });
     }
@@ -143,29 +136,29 @@ public class Activity_Doctor_Update_Password extends AppCompatActivity {
         btn_continue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                backToDoctorLogin();
+                backToPatientLogin();
             }
         });
     }
     private void openFailDialog() {
 
     }
-    private void backToDoctorPage() {
+    private void backToPatientPage() {
         Intent intent = new Intent(this, Activity_Doctor.class);
         //passing values to user activity
-        intent.putExtra(Activity_Doctor_Login.doctorDataKEY, (Serializable) doctorData);
-        intent.putExtra(Activity_Doctor_Login.doctorPhoneKEY,doctor_documentID);
+        intent.putExtra(Activity_Patient_Login.patientDataKEY, (Serializable) data);
+        intent.putExtra(Activity_Patient_Login.patientPhoneKEY,patient_documentID);
         startActivity(intent);
     }
 
-    private void backToDoctorLogin() {
-        Intent intent = new Intent(this, Activity_Doctor_Login.class);
+    private void backToPatientLogin() {
+        Intent intent = new Intent(this, Activity_Patient_Login.class);
         //passing values to user activity
         startActivity(intent);
     }
 
     @Override
     public void onBackPressed() {
-        backToDoctorPage();
+        backToPatientPage();
     }
 }

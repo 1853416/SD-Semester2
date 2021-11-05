@@ -38,13 +38,4 @@
         android:textColor="@color/pureWhite"
         android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/TV_A_Policy_Help"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/TV_A_Policy_AboutUs"
-        android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="10dp"
-        android:text="Help Page"/>
-
 </RelativeLayout>
