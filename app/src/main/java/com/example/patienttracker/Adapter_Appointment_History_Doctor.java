@@ -172,9 +172,10 @@ public class Adapter_Appointment_History_Doctor extends FirestoreRecyclerAdapter
             final String Username = "notdiscoveryemails2@gmail.com";
             final String Password = "SDgroup12";
             String MessagetoSend = "Good Day,"
-                    +patientname+"\n"
-                    +"This is too inform you that you have missed you appointment with Dr. "+doctorname+", that was at:"+ sDate
-                    +"\n" + " Please reschedule another appointment with you doctor";
+                    +patientname+"\n \n"
+                    +"You have missed you appointment with Dr."+doctorname+" on "+ sDate
+                    +"\n" + "Please reschedule your appointment as soon as possible \n"+
+                    "Thank you for using NotDiscovery!";
             Properties props = new Properties();
             props.put("mail.smtp.auth","true");
             props.put("mail.smtp.starttls.enable","true");
