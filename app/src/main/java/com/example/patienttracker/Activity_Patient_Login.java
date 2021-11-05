@@ -94,8 +94,6 @@ public class Activity_Patient_Login extends AppCompatActivity {
             }
         });
 
-        et_phone.setText("0824630844");
-        et_password.setText("abcd");
     }
 
     private void PatientLogin() {

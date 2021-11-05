@@ -97,8 +97,6 @@ public class Activity_Doctor_Login extends AppCompatActivity {
             }
         });
 
-        et_phone.setText("0824630844");
-        et_password.setText("971202");
     }
 
     //Buttons
