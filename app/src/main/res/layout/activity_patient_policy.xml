@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity_Patient_Policy"
+    tools:ignore="HardcodedText"
+    android:background="@color/bluePatient2">
+
+    <TextView
+        android:id="@+id/TV_A_Policy_Title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+
+        android:fontFamily="@font/keania_one_regular"
+        android:text="Private Policy"
+        android:textAlignment="center"
+        android:textColor="@color/pureWhite"
+        android:textSize="50sp" />
+
+    <TextView
+        android:id="@+id/TV_A_Policy_AboutUs"
+        android:layout_width="397dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_A_Policy_Title"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        android:text="Not only is Not Discovery focused on improving your health and quality of life but we also aim to provide all our users with the best online security.
+\n\nAll user information is stored on state of the art servers that provide reliable and professionals services.
+\n\nUser passwords are hashed and are stored in an encrypted format, this ensures that the users information will remain confidential, in the case of our database being corrupted.
+\n\nWhile using the app or the website, a user, be it a patient or a doctor, will be able to view or access another users information.
+\n\nDoctors are only be able to see the first, and last name of a patient who has booked an appointment with him or her.
+\n\nPatients are only able to see the first and last name of the doctor, as well as the doctors occupation and years of expierence. This information is made available to ensure that all of our patients get first class care and a 5 star expierence.
+\n\nShould you have any concerns, please feel free to send us an email or contact one of our call centers."
+        android:textColor="@color/pureWhite"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/TV_A_Policy_Help"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TV_A_Policy_AboutUs"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="10dp"
+        android:text="Help Page"/>
+
+</RelativeLayout>

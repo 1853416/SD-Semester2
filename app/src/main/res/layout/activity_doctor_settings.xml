@@ -25,11 +25,11 @@
         android:id="@+id/B_A_DoctorSetting_Policy"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/TV_A_DoctorSetting_Title"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="50dp"
-        android:layout_below="@id/TV_A_DoctorSetting_Title"
-
         android:backgroundTint="@color/bluePatient2"
+        android:drawableLeft="@drawable/ic_policy"
         android:text="Privacy Policy" />
 
     <Button
@@ -39,8 +39,8 @@
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/B_A_DoctorSetting_Policy"
-
         android:backgroundTint="@color/bluePatient2"
+        android:drawableLeft="@drawable/ic_person"
         android:text="Update My Information" />
 
     <Button
@@ -50,8 +50,18 @@
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="20dp"
         android:layout_below="@id/B_A_DoctorSetting_Update_Info"
-
         android:backgroundTint="@color/bluePatient2"
+        android:drawableLeft="@drawable/ic_profile2"
         android:text="Change Password" />
+
+    <Button
+        android:id="@+id/B_A_DoctorSetting_Back"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginHorizontal="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/pureRed"
+        android:text="Back" />
 
 </RelativeLayout>

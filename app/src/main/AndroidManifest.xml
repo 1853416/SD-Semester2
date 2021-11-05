@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar0">
         <activity
+            android:name=".Activity_Patient_Change_Password"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_Doctor_Change_Password"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_Patient_Update_Info"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_Doctor_Update_Info"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_Patient_Policy"
+            android:exported="true" />
+        <activity
+            android:name=".Activity_Doctor_Policy"
+            android:exported="true" />
+        <activity
             android:name=".Activity_Main"
             android:exported="true">
             <intent-filter>

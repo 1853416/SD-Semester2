@@ -35,9 +35,9 @@
         android:id="@+id/B_A_PatientSetting_Update_Info"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/B_A_PatientSetting_Policy"
         android:layout_marginHorizontal="50dp"
         android:layout_marginTop="20dp"
-        android:layout_below="@id/B_A_PatientSetting_Policy"
         android:backgroundTint="@color/greenDoctor"
         android:drawableLeft="@drawable/ic_person"
         android:text="Update My Information" />

@@ -13,16 +13,18 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <EditText
-        android:id="@+id/TITLE"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
 
-        android:text="Appointment History"
-        android:textAlignment="center"
-        android:textColor="@color/pureWhite"
-        android:textSize="35sp"
-        android:fontFamily="@font/keania_one_regular"/>
+        <EditText
+            android:id="@+id/TITLE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:fontFamily="@font/keania_one_regular"
+            android:text="Appointment History"
+            android:textAlignment="center"
+            android:textColor="@color/pureWhite"
+            android:backgroundTint="@color/pureWhite"
+            android:textSize="35sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RV_F_Patient_History"
