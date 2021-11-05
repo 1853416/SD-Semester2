@@ -40,22 +40,12 @@
             android:text="Doctor : "
             android:textColor="@color/pureWhite"
             android:textSize="20sp" />
-        <TextView
-            android:id="@+id/TV_A_Appointment_View_Doctor_Field"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/TV_A_Appointment_View_Doctor"
-            android:layout_marginStart="20dp"
-
-            android:text="Doctor Field : "
-            android:textColor="@color/pureWhite"
-            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/TV_A_Appointment_View_Patient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/TV_A_Appointment_View_Doctor_Field"
+            android:layout_below="@+id/TV_A_Appointment_View_Doctor"
             android:layout_marginStart="20dp"
 
             android:text="Patient : "

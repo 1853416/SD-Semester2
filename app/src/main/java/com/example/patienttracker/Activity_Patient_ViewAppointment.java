@@ -64,7 +64,6 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
         tv_name_doctor  = findViewById(R.id.TV_A_Appointment_View_Doctor);
         tv_name_patient = findViewById(R.id.TV_A_Appointment_View_Patient);
         tv_datetime     = findViewById(R.id.TV_A_Appointment_View_DateTime);
-        tv_doctor_field = findViewById(R.id.TV_A_Appointment_View_Doctor_Field);
 
         et_description  = findViewById(R.id.ET_A_Appointment_View_Description);
         et_prescription = findViewById(R.id.ET_A_Appointment_View_Prescription);
@@ -134,6 +133,7 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
                         tv_datetime.setText("Date & Time: " + note.getDate() + " " + note.getTime());
                         tv_name_doctor.setText("Doctor: " + note.getDoctor_fullName());
                         tv_name_patient.setText("Patient: " + note.getPatient_fullName());
+
                     }
                 });
     }
@@ -165,7 +165,7 @@ public class Activity_Patient_ViewAppointment extends AppCompatActivity {
         Intent intent = new Intent(this, Activity_Patient.class);
         //passing values to user activity
         intent.putExtra(Activity_Patient_Login.patientDataKEY, (Serializable) patientData);
-        intent.putExtra(Activity_Patient_Login.patientPhoneKEY,documentID_Doctor);
+        intent.putExtra(Activity_Patient_Login.patientPhoneKEY,documentID_Patient);
         startActivity(intent);
     }
 
