@@ -1,15 +1,10 @@
 package com.example.patienttracker;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.CalendarView;
-
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class Activity_Patient_Settings extends AppCompatActivity {
     //strings
@@ -46,7 +41,7 @@ public class Activity_Patient_Settings extends AppCompatActivity {
         });
 
         btn_password.setOnClickListener(v -> {
-            Intent intent = new Intent(this, Activity_Patient_Change_Password.class);
+            Intent intent = new Intent(this, Activity_Patient_Update_Password.class);
             intent.putExtra(Fragment_Patient_Home.phoneKey,patient_document_id);
             startActivity(intent);
         });

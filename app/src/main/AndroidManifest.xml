@@ -92,7 +92,7 @@
             android:name=".Activity_Patient_Update_Info"
             android:theme="@style/AppTheme.NoActionBarPatient" />
         <activity
-            android:name=".Activity_Patient_Change_Password"
+            android:name=".Activity_Patient_Update_Password"
             android:theme="@style/AppTheme.NoActionBarPatient" />
     </application>
 
