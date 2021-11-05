@@ -36,10 +36,10 @@ public class Activity_Patient_Settings extends AppCompatActivity {
         });
 
         btn_update.setOnClickListener(v -> {
-//            Intent intent = new Intent(this, Activity_Patient_Update_Info.class);
-//            intent.putExtra(Fragment_Patient_Home.phoneKey,patient_document_id);
-//            startActivity(intent);
-            Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, Activity_Patient_Update_Info.class);
+            intent.putExtra(Fragment_Patient_Home.phoneKey,patient_document_id);
+            startActivity(intent);
+//            Toast.makeText(getApplicationContext(),"Coming Soon",Toast.LENGTH_SHORT).show();
         });
 
         btn_password.setOnClickListener(v -> {

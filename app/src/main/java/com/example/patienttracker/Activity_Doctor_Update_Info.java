@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -34,14 +35,6 @@ public class Activity_Doctor_Update_Info extends AppCompatActivity {
     private String
             userEmail = "" ,userFName = "",userLName = "",
             userID = "", userFields = "",userQualifications = "",userYears = "";
-    public static String []doctor_Fields
-            = {
-            "Practitioner",
-            "OB/GYN",
-            "Psychiatrist",
-            "Dentist",
-            "General Surgeon",
-            "Dermatologist"};
 
     private Map<String, Object> doctorData ;
 
@@ -66,6 +59,10 @@ public class Activity_Doctor_Update_Info extends AppCompatActivity {
 
         Intent intent = getIntent();
         doctor_documentID = intent.getStringExtra(phoneKey);
+
+        TextView tv_phone = findViewById(R.id.TV_DoctorUpdate_Phone);
+
+        tv_phone.setText("Phone Number: "+doctor_documentID);
 
         il_email            = findViewById(R.id.IL_A_DoctorUpdate_Email);
         il_first_name       = findViewById(R.id.IL_A_DoctorUpdate_FirstName);

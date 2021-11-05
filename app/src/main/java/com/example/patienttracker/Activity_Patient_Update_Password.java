@@ -61,6 +61,8 @@ public class Activity_Patient_Update_Password extends AppCompatActivity {
         dialog_successful.setContentView(R.layout.dialog_successful_update);
         dialog_successful.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         btn_continue = dialog_successful.findViewById(R.id.B_D_Success_Continue);
+
+        getPatientData();
     }
 
     @Override
@@ -144,7 +146,7 @@ public class Activity_Patient_Update_Password extends AppCompatActivity {
 
     }
     private void backToPatientPage() {
-        Intent intent = new Intent(this, Activity_Doctor.class);
+        Intent intent = new Intent(this, Activity_Patient.class);
         //passing values to user activity
         intent.putExtra(Activity_Patient_Login.patientDataKEY, (Serializable) data);
         intent.putExtra(Activity_Patient_Login.patientPhoneKEY,patient_documentID);
