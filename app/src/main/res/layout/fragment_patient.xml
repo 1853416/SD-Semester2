@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         >
+
         <ImageView
             android:id="@+id/IV_Setting"
             android:layout_width="31dp"
@@ -107,7 +108,8 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@+id/RL_F_Patient_PhoneNumber"
-        android:background="@drawable/custom_underline_background">
+        android:background="@drawable/custom_underline_background_white"
+        >
 
         <TextView
             android:id="@+id/TV_F_Patient_Email"

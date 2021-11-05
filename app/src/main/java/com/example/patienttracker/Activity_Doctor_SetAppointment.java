@@ -219,8 +219,6 @@ public class Activity_Doctor_SetAppointment extends AppCompatActivity {
             public void onClick(View view) {
                 backToDoctorPage();
             }
-
-
         });
     }
     private void openFailDialog() {

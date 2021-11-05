@@ -167,6 +167,7 @@ public class Fragment_Patient_Home extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), Activity_Patient_Settings.class);
+                intent.putExtra(phoneKey, patient_phone);
                 startActivity(intent);
             }
         });

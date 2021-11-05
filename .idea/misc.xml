@@ -8,18 +8,27 @@
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/drawable/custom_background_white.xml" value="0.33063063063063064" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/drawable/custom_button_trans.xml" value="0.33063063063063064" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/drawable/fragment_patient_background_bar.xml" value="0.33063063063063064" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_change_password.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_change_password2.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_forgot.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_forgot_password.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_help.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_login.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_policy.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_register.xml" value="0.3055555555555556" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_set_appointment.xml" value="0.31244444444444447" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_settings.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_update_info.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_doctor_update_password.xml" value="0.31244444444444447" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_booking_select_doctor.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_booking_select_time.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_change_password.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_forgot.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_help.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_login.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_policy.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_settings.xml" value="0.31666666666666665" />
+        <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_update_info.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/activity_patient_view_appointment.xml" value="0.31244444444444447" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment.xml" value="0.31666666666666665" />
         <entry key="..\:/Users/Xin/StudioProjects/PatientTracker/app/src/main/res/layout/card_appointment_past.xml" value="0.31666666666666665" />

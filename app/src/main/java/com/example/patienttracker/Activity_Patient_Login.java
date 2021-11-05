@@ -108,7 +108,7 @@ public class Activity_Patient_Login extends AppCompatActivity {
     }
 
     private void PatientForgot() {
-        Intent intent = new Intent(this, Activity_Patient_Forgot.class);
+        Intent intent = new Intent(this, Activity_Patient_Forgot_Password.class);
         startActivity(intent);
     }
 
